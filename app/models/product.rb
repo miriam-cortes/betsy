@@ -8,6 +8,9 @@ class Product < ActiveRecord::Base
   belongs_to :merchant
   has_many :reviews
 
+  ###############
+  ### Methods ###
+  ###############
 
   def rating
     total_rating = 0
@@ -22,4 +25,23 @@ class Product < ActiveRecord::Base
     end
   end
 
+
+  ###################
+  ### Validations ###
+  ###################
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :inventory, presence: true
+  validates :image, presence: true
+
+  validate :limits_on_stars
+
+  # A rating must be between 0 and 5
+  def limits_on_stars
+    if rating <= 5 && rating >= 0
+      errors.add(:rating, "A rating must be between 0 and 5")
+    end
+  end
 end

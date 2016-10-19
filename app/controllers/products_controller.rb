@@ -19,10 +19,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     # @product.merchant_id = @merchant.id
-    @product.rating = 0
+    @product.rating = nil
 
     if @product.save
-      redirect_to product_path
+      redirect_to product_path(@product.id)
     else
       @error = "Did not save successfully. Please try again."
       @post_path = products_path
@@ -38,10 +38,10 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to product_path
+      redirect_to product_path(@product.id)
     else
       @error = "Did not save successfully. Please try again."
-      @post_path = product_path
+      @post_path = product_path(@product.id)
       @post_method = :put
       render :edit
     end
