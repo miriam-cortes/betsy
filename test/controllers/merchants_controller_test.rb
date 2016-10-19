@@ -14,6 +14,16 @@ class MerchantsControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    assert_template :new
+  end
+  end
+
+  test "Creating a Merchant changes number of Merchants" do
+    assert_difference('Merchant.count', 1) do
+      post_params = {merchant: {name: "Lola CherryCola"}}
+      post :create, post_params
+    end
+    assert_response :redirect
   end
 
   test "should get create" do

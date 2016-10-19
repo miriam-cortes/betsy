@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
-  # before_action :find_merchant only: [:show, :edit, :update]
+  #before_action :find_merchant only: [:show, :edit, :update]
 
   def index
     @merchants = Merchant.all
@@ -11,6 +11,7 @@ class MerchantsController < ApplicationController
 
   def new
     @merchant = Merchant.new
+    @path = merchants_create_path
   end
 
   def create
