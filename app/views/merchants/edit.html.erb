@@ -1,2 +1,2 @@
-<h1>Merchants#edit</h1>
-<p>Find me in app/views/merchants/edit.html.erb</p>
+<h1>Edit your info</h1>
+<%= render partial: "_merchant_partial", locals: {action_name: "update", params: { id: @merchant.id }} %>
