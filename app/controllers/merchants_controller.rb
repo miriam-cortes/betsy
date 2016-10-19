@@ -11,7 +11,7 @@ class MerchantsController < ApplicationController
 
   def new
     @merchant = Merchant.new
-    @path = merchants_create_path
+    @path = merchants_path
   end
 
   def create
