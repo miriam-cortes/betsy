@@ -1,70 +1,14 @@
 Rails.application.routes.draw do
+
   resources :products do
     resources :reviews
   end
 
-  get 'categories/index'
-
-  get 'categories/show'
-
-  get 'categories/new'
-
-  get 'categories/create'
-
-  get 'categories/edit'
-
-  get 'categories/update'
-
-  get 'categories/destroy'
-
-
-
-
-  get 'orders/index'
-
-  get 'orders/show'
-
-  get 'orders/new'
-
-  get 'orders/create'
-
-  get 'orders/edit'
-
-  get 'orders/update'
-
-  get 'orders/destroy'
-
-  get 'merchants/index'
-
-  get 'merchants/show'
-
-  get 'merchants/new'
-
-  get 'merchants/create'
-
-  get 'merchants/edit'
-
-  get 'merchants/update'
-
-  get 'merchants/destroy'
-
-  get 'guests/index'
-
-  get 'guests/show'
-
-  get 'guests/new'
-
-  get 'guests/create'
-
-  get 'guests/edit'
-
-  get 'guests/update'
-
-  get 'guests/destroy'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  resources :merchants
+  resources :categories
+  resources :orders
+  resources :guests
+  resources :sessions
 
   get "/auth/:provider/callback" =>  "sessions#create"
 

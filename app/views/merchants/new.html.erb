@@ -1,2 +1,14 @@
-<h1>Merchants#new</h1>
-<p>Find me in app/views/merchants/new.html.erb</p>
+<h1>Become a merchant.</h1>
+
+<%= form_for @merchant, url: @path do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+<% end %>
