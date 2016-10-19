@@ -6,6 +6,7 @@ class MerchantsController < ApplicationController
   end
 
   def show
+    find_merchant
   end
 
   def new
