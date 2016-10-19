@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :merchants
+  resources :products
+
   get 'categories/index'
 
   get 'categories/show'
@@ -28,19 +30,7 @@ Rails.application.routes.draw do
 
   get 'reviews/destroy'
 
-  get 'products/index'
 
-  get 'products/show'
-
-  get 'products/new'
-
-  get 'products/create'
-
-  get 'products/edit'
-
-  get 'products/update'
-
-  get 'products/destroy'
 
   get 'orders/index'
 

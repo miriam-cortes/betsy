@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018224431) do
+ActiveRecord::Schema.define(version: 20161019000145) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 20161018224431) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "total_amount"
-    t.integer  "guest_id"
-    t.integer  "merchant_id"
     t.string   "card_name"
     t.string   "card_exp"
     t.string   "shipping_street"
@@ -49,7 +47,12 @@ ActiveRecord::Schema.define(version: 20161018224431) do
     t.string   "card_cvv"
     t.string   "billing_zip"
     t.string   "shipping_zip"
+    t.integer  "guest_id"
+    t.integer  "merchant_id"
   end
+
+  add_index "orders", ["guest_id"], name: "index_orders_on_guest_id"
+  add_index "orders", ["merchant_id"], name: "index_orders_on_merchant_id"
 
   create_table "product_categories", force: :cascade do |t|
     t.integer  "product_id"
@@ -76,20 +79,24 @@ ActiveRecord::Schema.define(version: 20161018224431) do
     t.text     "description"
     t.integer  "price"
     t.string   "image"
-    t.integer  "merchant_id"
     t.integer  "inventory"
     t.float    "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "merchant_id"
   end
+
+  add_index "products", ["merchant_id"], name: "index_products_on_merchant_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
     t.integer  "stars"
     t.string   "author"
-    t.integer  "product_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "product_id"
   end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
 
 end
