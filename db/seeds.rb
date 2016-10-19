@@ -33,7 +33,7 @@ CSV.foreach('seeds_csvs/products_orders.csv') do |csv_obj|
 end
 
 CSV.foreach('seeds_csvs/products.csv') do |csv_obj|
-  Product.create(id: csv_obj[0].to_i, name: csv_obj[1], description: csv_obj[2], price: csv_obj[3].to_i, image: csv_obj[4], merchant_id: csv_obj[2].to_i )
+  Product.create(id: csv_obj[0].to_i, name: csv_obj[1], description: csv_obj[2], price: csv_obj[3].to_i, image: csv_obj[4], inventory: csv_obj[5].to_i, merchant_id: csv_obj[6].to_i )
 end
 
 CSV.foreach('seeds_csvs/reviews.csv') do |csv_obj|
