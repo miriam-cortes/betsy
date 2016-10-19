@@ -6,7 +6,8 @@
 <p>  Rating: <%= @product.rating == 0 ? "Not Yet Rated!" : @product.star_string %></p>
 
 <%# IF it's a merchant ONLY  %>
-<p> <%= link_to "Edit Product", edit_product_path(@product.id) %></p>
+<p> <%= button_to "Edit Product", edit_product_path(@product.id) %></p>
+<p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 
 
 <% if @reviews != nil %>

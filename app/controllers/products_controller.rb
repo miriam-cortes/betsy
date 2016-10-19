@@ -48,6 +48,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = find_product
+    if @product.class == Product
+      @product.destroy
+      redirect_to products_path
+    end
   end
 
   private
