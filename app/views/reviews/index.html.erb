@@ -3,7 +3,7 @@
 
 <% @reviews.each do |review|  %>
   <article>
-    <p><%= star_string(review.stars) %></p>
+    <p><%=  star_string(review.stars) %></p>
     <p><%= review.description %></p>
     <p>  By: <%= review.author %></p>
   </article>
