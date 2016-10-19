@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    @orders = Order.all
   end
 
   def show
@@ -9,6 +10,8 @@ class OrdersController < ApplicationController
   end
 
   def create
+    if current_merchant.nil?
+      
   end
 
   def edit
