@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   # def logout
   #   session[:merchant_id] = nil
   #   redirect_to '/products/index'
-  end
+  #  end
 
 
   def destroy
