@@ -5,7 +5,8 @@ module ApplicationHelper
     printed_stars = ""
     rating.times {|x| printed_stars << "⭐️"}
     printed_stars.html_safe
-
+  end
+  
   def greeting
     if current_merchant.nil?
       "Welcome Guest"
