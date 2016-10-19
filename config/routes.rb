@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+root to: 'products#index'
 
-  root to: 'products#index'
+  resources :products do
+    resources :reviews
+  end
+
     resources :categories
     resources :guests
     resources :merchants
-    resources :products
-    resources :reviews
     resources :orders
 
 
