@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :products do
+    resources :reviews
+  end
 
   get 'categories/index'
 
@@ -15,19 +17,6 @@ Rails.application.routes.draw do
 
   get 'categories/destroy'
 
-  get 'reviews/index'
-
-  get 'reviews/show'
-
-  get 'reviews/new'
-
-  get 'reviews/create'
-
-  get 'reviews/edit'
-
-  get 'reviews/update'
-
-  get 'reviews/destroy'
 
 
 
