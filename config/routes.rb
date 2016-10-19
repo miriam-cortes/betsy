@@ -1,83 +1,24 @@
 Rails.application.routes.draw do
+
   resources :products
 
-  get 'categories/index'
+  root to: 'products#index'
+    resources :categories
+    resources :guests
+    resources :merchants
+    resources :products
+    resources :reviews
+    resources :orders
 
-  get 'categories/show'
-
-  get 'categories/new'
-
-  get 'categories/create'
-
-  get 'categories/edit'
-
-  get 'categories/update'
-
-  get 'categories/destroy'
-
-  get 'reviews/index'
-
-  get 'reviews/show'
-
-  get 'reviews/new'
-
-  get 'reviews/create'
-
-  get 'reviews/edit'
-
-  get 'reviews/update'
-
-  get 'reviews/destroy'
-
-
-
-  get 'orders/index'
-
-  get 'orders/show'
-
-  get 'orders/new'
-
-  get 'orders/create'
-
-  get 'orders/edit'
-
-  get 'orders/update'
-
-  get 'orders/destroy'
-
-  get 'merchants/index'
-
-  get 'merchants/show'
-
-  get 'merchants/new'
-
-  get 'merchants/create'
-
-  get 'merchants/edit'
-
-  get 'merchants/update'
-
-  get 'merchants/destroy'
-
-  get 'guests/index'
-
-  get 'guests/show'
-
-  get 'guests/new'
-
-  get 'guests/create'
-
-  get 'guests/edit'
-
-  get 'guests/update'
-
-  get 'guests/destroy'
 
   get 'sessions/create'
 
   get 'sessions/destroy'
 
   get "/auth/:provider/callback" =>  "sessions#create"
+
+  # get "/login" => 'sessions#login'
+  # get "/logout" => 'sessions#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

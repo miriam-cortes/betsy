@@ -23,7 +23,15 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-
+  # def login
+  #   session[:merchant_id] = 1
+  #   redirect_to '/products/index'
+  # end
+  #
+  # def logout
+  #   session[:merchant_id] = nil
+  #   redirect_to '/products/index'
+  end
 
 
   def destroy
