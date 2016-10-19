@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :products
 
   root to: 'products#index'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
+
 
   get "/auth/:provider/callback" =>  "sessions#create"
 
