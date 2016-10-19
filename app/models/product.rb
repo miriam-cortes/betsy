@@ -22,9 +22,9 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def star_string
-    printed_stars = ""
-    rating.times {|x| printed_stars << "⭐️"}
-    return printed_stars
-  end
+  # def star_string
+  #   printed_stars = ""
+  #   rating.times {|x| printed_stars << "⭐️"}
+  #   return printed_stars
+  # end
 end

@@ -3,7 +3,7 @@
 <p> Description: <%= @product.description %></p>
 <p>Price: $<%= '%.2f' % (@product.price/100) %></p>
 <p>  Inventory: <%= @product.inventory %></p>
-<p>  Rating: <%= @product.rating == 0 ? "Not Yet Rated!" : @product.star_string %></p>
+<p>  Rating: <%= @product.rating == 0 ? "Not Yet Rated!" : star_string(@product.rating) %></p>
 
 <%# IF it's a merchant ONLY  %>
 <p> <%= button_to "Edit Product", edit_product_path(@product.id) %></p>
@@ -13,7 +13,7 @@
 <% if @reviews != nil %>
   <% @reviews.each do |review| %>
     <article>
-      <p><%= review.star_string %></p>
+      <p><%= star_string(review.stars) %></p>
       <p><%= review.description %></p>
       <p>  By: <%= review.author %></p>
     </article>

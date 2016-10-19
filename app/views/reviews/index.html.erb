@@ -1,10 +1,10 @@
 <h1> All Reviews for <%= @product.name %></h1>
-<h4> Average: <%= @product.star_string %></h4>
+<h4> Average: <%= star_string(@product.rating) %></h4>
 
 <% @reviews.each do |review|  %>
   <article>
-    <p><%= review.star_string %></p>
+    <p><%= star_string(review.stars) %></p>
     <p><%= review.description %></p>
-    <p>  By: <%= review.author %></p> 
+    <p>  By: <%= review.author %></p>
   </article>
 <% end %>
