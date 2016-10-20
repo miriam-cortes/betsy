@@ -3,19 +3,30 @@
 <p> Description: <%= @product.description %></p>
 <p>Price: $<%= '%.2f' % (@product.price/100) %></p>
 <p>  Inventory: <%= @product.inventory %></p>
-<p>  Rating: <%= @product.rating == 0 ? "Not Yet Rated!" : star_string(@product.rating) %></p>
+<p>  Rating: <%= @product.rating == nil ? "Not Yet Rated!" : star_string(@product.rating) %></p>
 
 <%# IF it's a merchant ONLY  %>
-<p> <%= button_to "Edit Product", edit_product_path(@product.id) %></p>
+<p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_product', method: :get%></p>
 <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 
+<%= form_for @line_item,
+  method: :post,
+  url: new_order_path do |f| %>
+  <div class="form_attribute">
+    <%= f.label :qty %>
+    <%= f.text_area :qty %>
+  </div>
+  <div class="form_attribute">
+    <%= f.submit "Add to Cart "%>
+  </div>
+<% end %>
 
 <% if @reviews != nil %>
   <% @reviews.each do |review| %>
     <article>
       <p><%= star_string(review.stars) %></p>
       <p><%= review.description %></p>
-      <p>  By: <%= review.author %></p>
+      <p> <%= "By: #{review.author}" if review.author != ''  %></p>
     </article>
   <% end %>
 <% end %>

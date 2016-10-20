@@ -7,4 +7,5 @@ class Category < ActiveRecord::Base
 #     c.name.capitalize!
 #   end
 # end
+
 end
