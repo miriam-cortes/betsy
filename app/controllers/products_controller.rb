@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def show
     @reviews = @product.reviews.order('stars desc, id').limit(3)
-    #@order = Order.new ### OR Line.new
+    @order = Order.new ### OR Line.new
   end
 
   def new
