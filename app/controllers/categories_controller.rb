@@ -1,12 +1,15 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.all
+    # @category = Category.all
+    @category = Category.order("lower(name) ASC").all
     @new_category = Category.new
+
+
   end
 
   def show
     @category = Category.find(params[:id].to_i)
-    @products_in_category = @category.products #Product_categories.find_by category_id: (params[:id].to_i)
+    @products_in_category = @category.products
   end
 
   def new
@@ -29,6 +32,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @category = Category.find(params[:id].to_i)
+    @category.destroy
+
+    redirect_to categories_path
   end
 
   private
