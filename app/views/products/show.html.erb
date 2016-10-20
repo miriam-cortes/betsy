@@ -9,13 +9,12 @@
 <p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_product', method: :get%></p>
 <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 
-Need to choose the corect path to use...maybe use the line item instead of order
-<%= form_for @order,
+<%= form_for @line_item,
   method: :post,
   url: new_order_path do |f| %>
   <div class="form_attribute">
-    <%= f.label :quantity %>
-    <%= f.text_area :quantity %>
+    <%= f.label :qty %>
+    <%= f.text_area :qty %>
   </div>
   <div class="form_attribute">
     <%= f.submit "Add to Cart "%>
