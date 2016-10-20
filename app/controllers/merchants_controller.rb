@@ -15,9 +15,13 @@ class MerchantsController < ApplicationController
   end
 
   def create
-    @merchant = Merchant.new(merchant_params)
+    @params = params
+    @merchant = Merchant.new
+    @merchant.name = params[:merchant][:name]
+    @merchant.email = params[:merchant][:email]
+    @merchant.password = params[:merchant][:password]
     if @merchant.save
-      redirect_to merchants_path
+      redirect_to merchant_path(@merchant.id)
     else
       render :new
     end
@@ -25,12 +29,18 @@ class MerchantsController < ApplicationController
   end
 
   def edit
+    find_merchant
   end
 
   def update
   end
 
   def destroy
+  end
+
+  def show_merchant_products
+    find_merchant
+    @products = Product.find_by(merchant_id: @merchant.id)
   end
 
   private
