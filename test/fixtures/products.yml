@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 new_shoe:
-  id: 1
   name: "A Shoe!"
   description: "A beautiful shoe!"
   price: 300
@@ -11,7 +10,6 @@ new_shoe:
   rating: 3
 
 glitter:
-  id: 2
   name: "Glitter Wand"
   description: "a glittery wand"
   price: 1500
@@ -21,7 +19,6 @@ glitter:
   rating: 5
 
 no_rating:
-  id: 3
   name: "Glitter Wand"
   description: "a glittery wand"
   price: 1500
