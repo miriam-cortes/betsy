@@ -1,13 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  description: MyText
-  stars: 1
-  author: MyString
-  product_id: 1
+glitter_review:
+  id: 1
+  description: "nfjd"
+  stars: 3
+  author: "fndjk"
+  product: glitter
 
-two:
-  description: MyText
+shoe_review:
+  id: 2
+  description: "mkd"
   stars: 1
-  author: MyString
-  product_id: 1
+  author: "f dk"
+  product: new_shoe
+
+rating_review_one:
+  id: 3
+  description: "nfjds"
+  stars: 5
+  author: "jf"
+  product: no_rating
+
+rating_review_two:
+  id: 4
+  description: "mkvd"
+  stars: 3
+  author: "fdjk"
+  product: no_rating

@@ -1,19 +1,30 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  price: 1.5
-  image: MyString
+new_shoe:
+  id: 1
+  name: "A Shoe!"
+  description: "A beautiful shoe!"
+  price: 300
+  image: 'http://placekitten.com/200/300'
   merchant_id: 1
-  inventory: 1
-  rating: 1
+  inventory: 4
+  rating: 3
 
-two:
-  name: MyString
-  description: MyText
-  price: 1.5
-  image: MyString
-  merchant_id: 1
-  inventory: 1
-  rating: 1
+glitter:
+  id: 2
+  name: "Glitter Wand"
+  description: "a glittery wand"
+  price: 1500
+  image: 'http://placekitten.com/200/300'
+  merchant_id: 2
+  inventory: 7
+  rating: 5
+
+no_rating:
+  id: 3
+  name: "Glitter Wand"
+  description: "a glittery wand"
+  price: 1500
+  image: 'http://placekitten.com/200/300'
+  merchant_id: 2
+  inventory: 7

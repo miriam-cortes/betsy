@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def show
     @reviews = @product.reviews.order('stars desc, id').limit(3)
+    #@order = Order.new ### OR Line.new
   end
 
   def new
@@ -38,6 +39,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
+      @product.rating
       redirect_to product_path(@product.id)
     else
       @error = "Did not save successfully. Please try again."

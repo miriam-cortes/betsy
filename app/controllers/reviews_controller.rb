@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
       @error = "Did not save successfully. Please try again."
       @post_path = product_reviews_path
       @post_method = :post
-      render :new_product_review
+      render :new
     end
   end
 

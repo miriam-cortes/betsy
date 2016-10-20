@@ -35,13 +35,14 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :inventory, presence: true
   validates :image, presence: true
+  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5, allow_nil: true }
 
-  validate :limits_on_stars
-
-  # A rating must be between 0 and 5
-  def limits_on_stars
-    if rating <= 5 && rating >= 0
-      errors.add(:rating, "A rating must be between 0 and 5")
-    end
-  end
+  # validate :limits_on_stars
+  #
+  # # A rating must be between 0 and 5
+  # def limits_on_stars
+  #   unless (rating <= 5) && (rating >= 0)
+  #     errors.add(:rating, "A rating must be between 0 and 5")
+  #   end
+  # end
 end
