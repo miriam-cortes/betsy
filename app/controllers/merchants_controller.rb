@@ -16,16 +16,22 @@ class MerchantsController < ApplicationController
 
   def create
     @params = params
-    @merchant = Merchant.new
-    @merchant.name = params[:merchant][:name]
-    @merchant.email = params[:merchant][:email]
-    @merchant.password = params[:merchant][:password]
-    if @merchant.save
-      redirect_to merchant_path(@merchant.id)
-    else
-      render :new
-    end
+    # index
+    # @merchants.each do |this_merchant|
+    #   flash[:notice] = "A merchant with this email already exists." if this_merchant.email == params[:merchant][:email]
+    # end
+      @merchant = Merchant.new
+      @merchant.name = params[:merchant][:name]
+      @merchant.email = params[:merchant][:email]
+      @merchant.password = params[:merchant][:password]
 
+        if @merchant.save
+          redirect_to merchant_path(@merchant.id)
+        else
+          render :new
+        end
+      end
+    end
   end
 
   def edit

@@ -28,8 +28,7 @@ root to: 'products#index'
   get 'sessions/destroy'
 
   get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
-
-
-  get "/auth/:provider/callback" =>  "sessions#create"
+  get '/auth/:provider/callback' => 'merchant#create'
+  get 'merchants/login' => 'merchants#login', as: 'login'
 
 end

@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= link_to("log in via Github", "/auth/github") %>
+  </header>
+
   <h1><%= greeting %></h1>
 <%= yield %>
 
