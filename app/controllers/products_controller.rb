@@ -60,11 +60,19 @@ class ProductsController < ApplicationController
   private
 
   def find_product
-    @product = Product.find(params[:id])
+    if Product.exists?(params[:id].to_i) == true
+      return @product = Product.find(params[:id].to_i)
+    else
+      render :status => 404
+    end
   end
 
   def find_merchant
-    @merchant = Merchant.find(params[:id])
+    if Merchant.exists?(params[:id].to_i) == true
+      return @merchant = Merchant.find(params[:id].to_i)
+    else
+      render :status => 404
+    end
   end
 
   def product_params

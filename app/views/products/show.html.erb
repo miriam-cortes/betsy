@@ -27,6 +27,7 @@
       <p><%= star_string(review.stars) %></p>
       <p><%= review.description %></p>
       <p> <%= "By: #{review.author}" if review.author != ''  %></p>
+      <p> <%= button_to "Delete Review", {controller: 'reviews', action: 'destroy', product_id: @product.id, id: review.id}, method: :delete, data: {confirm: "Are you sure?"}%></p>
     </article>
   <% end %>
 <% end %>

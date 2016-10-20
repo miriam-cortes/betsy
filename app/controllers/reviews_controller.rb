@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_product
-  before_action :find_review, only: [:show, :edit, :update]
+  before_action :find_review, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -37,15 +37,30 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = find_review
+    if @review.class == Review
+      @review.destroy
+      redirect_to product_path(@product.id)
+    end
   end
 
   private
   def find_product
-    @product = Product.find(params[:product_id])
+    if Product.exists?(params[:product_id].to_i) == true
+      return @product = Product.find(params[:product_id].to_i)
+    else
+      render :status => 404
+    end
   end
+
   def find_review
-    @review = Review.find(params[:id])
+    if Review.exists?(params[:id].to_i) == true
+      return @review = Review.find(params[:id].to_i)
+    else
+      render :status => 404
+    end
   end
+
   def review_params
     params.require(:review).permit(:stars, :description, :author)
   end
