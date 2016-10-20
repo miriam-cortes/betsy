@@ -2,9 +2,9 @@
 <p></p>
 
 <ul>
-  <li><%= button_to 'Add a Product', products_new_path(params[:id]), :class => "button", method: :get %></li>
-  <li><%= button_to 'View Products', products_show_path(params[:id]), :class => "button", method: :get %></li>
-  <li><%= button_to 'Add a Category', categories_new_path(params[:id]), :class => "button", method: :get %></li>
+  <li><%= button_to 'Add a Product', new_product_path(params[:id]), class: "button", method: :get %></li>
+  <li><%= button_to 'View Products', merchant_products_path(params[:id]), class: "button", method: :get %></li>
+  <li><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></li>
 </ul>
 
 <article>
@@ -18,8 +18,10 @@
 
       <% @merchant.orders.each do |order| %>
         <tr>
-          <th><%= link_to(order.id, orders_show_path(order.id)) %></th>
-          <th><%#= link_to(Product.find(order.product_ids).name, products_show_path(product.id)) %></th>
+          <th><%= link_to(order.id, orders_path(order.id)) %></th>
+            <% order.products.each do |product| %>
+              <th><%= link_to(product.name, product_path(product.id)) %></th>
+            <% end %>
           <th><%#= order.status %></th>
         </tr>
       <% end %>
@@ -32,9 +34,11 @@
   <div>
     <h2>Revenue</h2>
     <p>Total Revenue for Pending Orders: </p>
-    <p>$</p>
+    <p>$
+      <%# if  %>
+      <%#= sprintf "%.2f", @merchant.revenue_paid_orders %></p>
     <p>Total Revenue for Paid Orders:</p>
-    <p>$</p>
+    <p>$ <%= sprintf "%.2f", @merchant.revenue_paid_orders %></p>
     <p>Total Revenue for Cancelled Orders:</p>
     <p>$</p>
     <p>Total Revenue for Completed Orders:</p>
@@ -44,7 +48,7 @@
   </div>
   <div>
     <h2>Orders</h2>
-    <p>Total Pending Orders</p>
+    <p>Total Pending Orders: </p>
     <p></p>
     <p>Total Cancelled Orders:</p>
     <p></p>

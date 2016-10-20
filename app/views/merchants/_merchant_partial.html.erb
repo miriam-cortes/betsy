@@ -1,12 +1,14 @@
 <%= form_for @merchant, url: @path do |f| %>
-<ul>
-  <li><%= f.label :name %></li>
-  <li><%= f.text_field :name %></li>
 
-  <li><%= f.label :email %></li>
-  <li><%= f.text_field :email %></li>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <li><%= f.label :password %></li>
-  <li><%= f.text_field :password %></li>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
-</ul>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.submit %>
+
+<% end %>

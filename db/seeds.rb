@@ -21,7 +21,7 @@ CSV.foreach('seeds_csvs/merchant.csv') do |csv_obj|
 end
 
 CSV.foreach('seeds_csvs/orders.csv') do |csv_obj|
-  Order.create(id: csv_obj[0].to_i, total_amount: csv_obj[1].to_i, guest_id: csv_obj[2].to_i, merchant_id: csv_obj[3].to_i, card_name: csv_obj[4], card_number: csv_obj[5], card_exp: csv_obj[6], card_cvv: csv_obj[7], billing_zip: csv_obj[8], shipping_street: csv_obj[8], shipping_city: csv_obj[9], shipping_state: csv_obj[10], shipping_zip: csv_obj[11])
+  Order.create(id: csv_obj[0].to_i, guest_id: csv_obj[1].to_i, total_amount: csv_obj[2].to_f/100, merchant_id: csv_obj[3].to_i, card_name: csv_obj[4], card_number: csv_obj[5], card_exp: csv_obj[6], card_cvv: csv_obj[7], billing_zip: csv_obj[8], shipping_street: csv_obj[9], shipping_city: csv_obj[10], shipping_state: csv_obj[11], shipping_zip: csv_obj[12],order_status: csv_obj[13])
 end
 
 CSV.foreach('seeds_csvs/product_categories.csv') do |csv_obj|
