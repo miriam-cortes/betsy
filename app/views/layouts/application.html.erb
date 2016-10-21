@@ -9,7 +9,7 @@
 <body>
   <header>
     <% if @merchant %>
-      <%= link_to("Log out", 'sessions/destroy') %>
+      <%= link_to("Log out", 'sessions/destroy', method: :delete) %>
     <% else %>
       <ul>
         <li><%= link_to("log in via Github", "/auth/github") %></li>
