@@ -1,13 +1,14 @@
+# Merchant Model
 class Merchant < ActiveRecord::Base
   has_many :products
   has_many :orders
-  validates :name, :password, :email, presence: true
+  validates :name, :email, presence: true
   validates :email, uniqueness: true
 
   def self.build_from_github(auth_hash)
     merchant       = Merchant.new
-    merchant.id   = auth_hash[:uid]
-    # user.provider = 'github'
+    merchant.uid   = auth_hash[:uid]
+    merchant.provider = 'github'
     merchant.name  = auth_hash['info']['name']
     merchant.email = auth_hash['info']['email']
     # user.avatar = auth_hash['extra']['raw_info']['avatar_url']

@@ -2,7 +2,8 @@ class MerchantsController < ApplicationController
   #before_action :find_merchant only: [:show, :edit, :update]
 
   def index
-    @merchants = Merchant.all
+    # @merchants = Merchant.all
+    find_merchant
   end
 
   def show
@@ -15,23 +16,6 @@ class MerchantsController < ApplicationController
   end
 
   def create
-    @params = params
-    # index
-    # @merchants.each do |this_merchant|
-    #   flash[:notice] = "A merchant with this email already exists." if this_merchant.email == params[:merchant][:email]
-    # end
-      @merchant = Merchant.new
-      @merchant.name = params[:merchant][:name]
-      @merchant.email = params[:merchant][:email]
-      @merchant.password = params[:merchant][:password]
-
-        if @merchant.save
-          redirect_to merchant_path(@merchant.id)
-        else
-          render :new
-        end
-      end
-    end
   end
 
   def edit
@@ -56,6 +40,6 @@ class MerchantsController < ApplicationController
   end
 
   def find_merchant
-    @merchant = Merchant.find(params[:id])
+    @merchant = Merchant.find_by(id: session[:merchant_id])
   end
 end
