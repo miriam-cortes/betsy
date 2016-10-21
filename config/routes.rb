@@ -13,7 +13,7 @@ root to: 'products#index'
   resources :products do
     resources :reviews
   end
-
+  delete 'merchants/sessions/destroy' => 'sessions#destroy'
     resources :categories
     resources :guests
     resources :merchants
@@ -21,7 +21,7 @@ root to: 'products#index'
 
   get 'sessions/create'
 
-  get 'sessions/destroy'
+  delete 'sessions/destroy' => 'sessions#destroy'
 
   get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
 
