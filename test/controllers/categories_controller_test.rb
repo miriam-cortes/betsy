@@ -40,4 +40,5 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+
 end
