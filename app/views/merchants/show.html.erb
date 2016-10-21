@@ -1,11 +1,9 @@
-<h2><%= @merchant[:name] %></h2>
 <p></p>
 
-<ul>
-  <li><%= button_to 'Add a Product', new_product_path(params[:id]), class: "button", method: :get %></li>
-  <li><%= button_to 'View Products', merchant_products_path(params[:id]), class: "button", method: :get %></li>
-  <li><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></li>
-</ul>
+
+  <p><%= button_to 'Add a Product', new_product_path(params[:id]), class: "button", method: :get %></p>
+  <p><%= button_to 'View Products', merchant_products_path(params[:id]), class: "button", method: :get %></p>
+  <p><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></p>
 
 <article>
   <table>
