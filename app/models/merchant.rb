@@ -20,7 +20,19 @@ class Merchant < ActiveRecord::Base
   def revenue_paid_orders
     revenue_total = 0.0
     orders.each do |order|
-      revenue_total += order.total_amount
+      if order.order_status == "paid"
+        revenue_total += order.total_amount
+      end
+    end
+    return revenue_total
+  end
+
+  def revenue_pending_orders
+    revenue_total = 0.0
+    orders.each do |order|
+      if order.order_status == "pending"
+        revenue_total += order.total_amount
+      end
     end
     return revenue_total
   end
