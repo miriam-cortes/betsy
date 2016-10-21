@@ -7,6 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <% if @merchant %>
+      <h1>Welcome, <%= @merchant.name %></h1>
+      <ul>
+        <li><%#= link_to("Log out", merchant_logout_path) %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><%= link_to("log in via Github", "/auth/github") %></li>
+      </ul>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p class="flash-notice"> <%= flash[:notice] %></p>
+    <% end %>
+
+  </header>
+
   <h1><%= greeting %></h1>
 <%= yield %>
 
