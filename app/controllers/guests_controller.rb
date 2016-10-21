@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
 
-  before_action :find_guest only: [:show]
+  before_action :find_guest, only: [:show]
   def index
     @guests = Guest.all
   end

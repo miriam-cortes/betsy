@@ -4,12 +4,15 @@
   <h5><%= link_to(category.name, category_path(category.id)) %></h5></br>
 <% end %>
 
-<h3>Add a New Category</h3>
-<%= form_for @new_category, url: categories_path do |f| %>
+<% if current_merchant != nil %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <h3><%= 'Add a New Category' %></h3>
+  <%= form_for @new_category, url: categories_path do |f| %>
 
-<%= f.submit %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
+  <%= f.submit %>
+
+  <% end %>
 <% end %>
