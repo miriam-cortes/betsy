@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :find_merchant
   before_action :find_product
   before_action :find_review, only: [:show, :edit, :update, :destroy]
 
@@ -12,7 +13,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @post_path = product_reviews_path
+    @post_path = merchant_product_reviews_path
     @post_method = :post
   end
 
@@ -21,10 +22,10 @@ class ReviewsController < ApplicationController
     @review.product_id = @product.id
 
     if @review.save
-      redirect_to product_path(@product.id)
+      redirect_to merchant_product_path(@merchant.id, @product.id)
     else
       @error = "Did not save successfully. Please try again."
-      @post_path = product_reviews_path
+      @post_path = merchant_product_reviews_path
       @post_method = :post
       render :new
     end
@@ -40,14 +41,24 @@ class ReviewsController < ApplicationController
     @review = find_review
     if @review.class == Review
       @review.destroy
-      redirect_to product_path(@product.id)
+      redirect_to merchant_product_path(@product.id)
     end
   end
 
   private
+
   def find_product
     if Product.exists?(params[:product_id].to_i) == true
       return @product = Product.find(params[:product_id].to_i)
+    else
+      render :status => 404
+    end
+  end
+
+  def find_merchant
+    find_product
+    if Merchant.exists?(@product.merchant_id) == true
+      return @merchant = Merchant.find(@product.merchant_id)
     else
       render :status => 404
     end

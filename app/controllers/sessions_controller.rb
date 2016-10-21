@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     end
 
     #Save the merchant ID in the session
-    session[:merchant_id] = @merchant.id
+    session[:merchant_id] = @merchant.id.to_i
 
     redirect_to merchant_path(@merchant.id)
   end
