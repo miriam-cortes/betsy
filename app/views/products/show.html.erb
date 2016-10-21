@@ -9,17 +9,19 @@
 <p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_product', method: :get%></p>
 <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 
-<%= form_for @line_item,
+<%= form_tag @line_items,
   method: :post,
-  url: new_order_path do |f| %>
+  url: orders_path do |f| %>
   <div class="form_attribute">
-    <%= f.label :qty %>
+    <div class="form_attribute">
+      <%= f.label :qty %>
     <%= f.text_area :qty %>
-  </div>
-  <div class="form_attribute">
-    <%= f.submit "Add to Cart "%>
+    </div>
+ <%= f.submit "Add to Cart "%>
   </div>
 <% end %>
+
+<!-- <p> <%= button_to "Add to Cart", orders_path(product_id: @product.id), method: :post%></p> -->
 
 <% if @reviews != nil %>
   <% @reviews.each do |review| %>
