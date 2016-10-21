@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem "awesome_print"
 gem "omniauth"
 gem "omniauth-github"
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
@@ -12,6 +14,7 @@ gem 'rails_12factor', group: :production
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]# Use SCSS for stylesheets
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
