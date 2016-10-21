@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       return total_amount
     end
   end
-  
+
     def total_amount
       subtotal
       total_amount.inject { |result, element| result + element }
@@ -42,22 +42,23 @@ class OrdersController < ApplicationController
 
   def guest_create_cart
     if current_merchant.nil? && if @order.guest_id.nil?
-    @guest = Guest.new
-    @guest.save
-    @order = Order.new
-    @order.guest_id = @guest.id
-    @order.order_status = "pending"
-    @order.save
-    @line = LineItem.new
-    @line.order_id = @order.id
-    @line.product_id = params[:products][:product_id]
-    @line.merchant_id = params[:products][:merchant_id]
-    @line.qty = params[:qty]
-    @line.price = params[:products][:price]
-    @line.save
-  else
-    add_to_cart
+      @guest = Guest.new
+      @guest.save
+      @order = Order.new
+      @order.guest_id = @guest.id
+      @order.order_status = "pending"
+      @order.save
+      @line = LineItem.new
+      @line.order_id = @order.id
+      @line.product_id = params[:products][:product_id]
+      @line.merchant_id = params[:products][:merchant_id]
+      @line.qty = params[:qty]
+      @line.price = params[:products][:price]
+      @line.save
+    else
+      add_to_cart
     end
+  end
   def add_to_cart
     @line = LineItem.new
     @line.order_id = @order.id
@@ -66,10 +67,10 @@ class OrdersController < ApplicationController
     @line.qty = params[:qty]
     @line.price = params[:products][:price]
     @line.save
-    end
+  end
 
-    def remove_from_cart
-      @line = @order.line_items.find(params[:id])
-        @line.id.destroy(params[:id].to_i)
-    end
+  def remove_from_cart
+    @line = @order.line_items.find(params[:id])
+      @line.id.destroy(params[:id].to_i)
+  end
 end
