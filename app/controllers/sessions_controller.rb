@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def create_merchant
-
   end
+
   # def login
   #   session[:merchant_id] = 1
   #   redirect_to '/products/index'
@@ -27,12 +27,12 @@ class SessionsController < ApplicationController
   #
   # def logout
   #   session[:merchant_id] = nil
-  #   redirect_to '/products/index'
+  #   redirect_to root_path
   #  end
 
 
   def destroy
     session[:merchant_id] = nil
-    redirect_to root_path 
+    redirect_to root_path
   end
 end

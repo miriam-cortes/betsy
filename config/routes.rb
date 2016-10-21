@@ -21,6 +21,8 @@ root to: 'products#index'
 
   get 'sessions/create'
 
+  delete 'sessions/destroy' => 'sessions#destroy'
+
   get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
 
 
