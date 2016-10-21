@@ -14,12 +14,14 @@ class OrdersController < ApplicationController
   def create
   end
 
-def subtotal
-  @order.line_items do |line|
-  line_cost = @line.price * @line.qty
-  total_amount << line_cost
-  return total_amount  
-end
+  def subtotal
+    @order.line_items do |line|
+      line_cost = @line.price * @line.qty
+      total_amount << line_cost
+      return total_amount
+    end
+  end
+  
     def total_amount
       subtotal
       total_amount.inject { |result, element| result + element }
