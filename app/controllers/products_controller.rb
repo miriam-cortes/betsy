@@ -1,9 +1,13 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update]
-  # before_action :find_merchant, only: [:new, :create, :edit, :update]
+  before_action :find_merchant, except: [:all_products]
+
+  def all_products
+    @products = Product.all
+  end
 
   def index
-    @products = Product.all
+    @products = Product.where(merchant_id: @merchant.id)
   end
 
   def show
@@ -13,37 +17,39 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @post_path = products_path
+    @post_path = merchant_products_path(@merchant.id)
     @post_method = :post
   end
 
   def create
+    @params = params
     @product = Product.new(product_params)
     # @product.merchant_id = @merchant.id
     @product.rating = nil
+    @product.merchant_id = @merchant.id
 
     if @product.save
-      redirect_to product_path(@product.id)
+      redirect_to merchant_product_path(@merchant.id, @product.id)
     else
       @error = "Did not save successfully. Please try again."
-      @post_path = products_path
+      @post_path = merchant_products_path
       @post_method = :post
       render :new
     end
   end
 
   def edit
-    @post_path = product_path
+    @post_path = merchant_product_path(@merchant.id)
     @post_method = :put
   end
 
   def update
     if @product.update(product_params)
       @product.rating
-      redirect_to product_path(@product.id)
+      redirect_to merchant_product_path(@merchant.id, @product.id)
     else
       @error = "Did not save successfully. Please try again."
-      @post_path = product_path(@product.id)
+      @post_path = merchant_product_path(@merchant.id, @product.id)
       @post_method = :put
       render :edit
     end
@@ -53,7 +59,7 @@ class ProductsController < ApplicationController
     @product = find_product
     if @product.class == Product
       @product.destroy
-      redirect_to products_path
+      redirect_to merchant_products_path(@merchant.id)
     end
   end
 
@@ -68,8 +74,8 @@ class ProductsController < ApplicationController
   end
 
   def find_merchant
-    if Merchant.exists?(params[:id].to_i) == true
-      return @merchant = Merchant.find(params[:id].to_i)
+    if Merchant.exists?(params[:merchant_id].to_i) == true
+      return @merchant = Merchant.find(params[:merchant_id].to_i)
     else
       render :status => 404
     end
