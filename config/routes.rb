@@ -8,22 +8,26 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-root to: 'products#index'
+root to: 'products#all_products'
 
-  resources :products do
-    resources :reviews
+  resources :merchants do
+    resources :products do
+      resources :reviews
+    end
   end
 
     resources :categories
     resources :guests
-    resources :merchants
+    #resources :merchants
     resources :orders
 
   get 'sessions/create'
 
   get 'sessions/destroy'
 
-  get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
+  get 'products/all_products' => 'products#all_products', as: 'all_products'
+
+  # get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
 
 
 end
