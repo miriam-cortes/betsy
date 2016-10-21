@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @post_path = merchant_products_path@merchant.id
+    @post_path = merchant_products_path(@merchant.id)
     @post_method = :post
   end
 
