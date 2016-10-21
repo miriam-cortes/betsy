@@ -7,6 +7,6 @@
   </article>
 <% end %>
 
-<% if current_merchant == true %>
+<% if current_merchant != nil %>
   <p>  <%= link_to "Add New Product", new_merchant_product_path(@merchant.id) %></p>
 <% end %>
