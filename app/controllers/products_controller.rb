@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update]
-  before_action :find_merchant
+  before_action :find_merchant, except: [:all_products]
 
   def all_products
     @products = Product.all

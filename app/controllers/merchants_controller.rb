@@ -40,6 +40,6 @@ class MerchantsController < ApplicationController
   end
 
   def find_merchant
-    @merchant = Merchant.find_by(id: session[:merchant_id])
+    @merchant = Merchant.find_by(id: session[:merchant_id].to_i)
   end
 end

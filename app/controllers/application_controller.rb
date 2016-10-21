@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_merchant, :current_guest
 
   def current_merchant
-    @current_merchant ||= Merchant.find_by(id: session[:merchant_id].to_i)
+    return @current_merchant ||= Merchant.find_by(id: session[:merchant_id].to_i)
   end
 
   def current_guest

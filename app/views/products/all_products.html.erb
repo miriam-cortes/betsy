@@ -2,11 +2,7 @@
 
 <% @products.each do |product| %>
   <article>
-    <p>  <%= link_to product.name, merchant_product_path(@merchant.id, product.id) %>  </p>
+    <p>  <%= link_to product.name, merchant_product_path(product.merchant_id, product.id) %>  </p>
     <p>  <%= image_tag(product.image, size: "200x300", alt: "Photo of #{product.name}.") %>  </p>
   </article>
-<% end %>
-
-<% if :current_merchant == true %>
-  <p>  <%= link_to "Add New Product", new_merchant_product_path(@merchant.id) %></p>
 <% end %>
