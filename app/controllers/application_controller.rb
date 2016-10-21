@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_merchant, :current_guest, :current_cart
 
   def current_merchant
-    @current_merchant ||= Merchant.find_by(id: session[:merchant_id])
+    @current_merchant ||= Merchant.find_by(id: session[:merchant_id].to_i)
   end
 
   def current_guest
@@ -28,5 +28,10 @@ class ApplicationController < ActionController::Base
     return current_guest.cart
     end
   end
+
+
+    @current_guest ||= Guest.find_by(id: session[:user_id].to_i)
+  end
+
 
 end

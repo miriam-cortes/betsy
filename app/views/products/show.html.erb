@@ -1,3 +1,4 @@
+
 <h1><%= @product.name %></h1>
 <p><%= image_tag(@product.image, size: "200x275", alt: "Photo of #{@product.name}.") %> </p>
 <p> Description: <%= @product.description %></p>
@@ -5,9 +6,12 @@
 <p>  Inventory: <%= @product.inventory %></p>
 <p>  Rating: <%= @product.rating == nil ? "Not Yet Rated!" : star_string(@product.rating) %></p>
 
-<%# IF it's a merchant ONLY  %>
-<p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_product', method: :get%></p>
-<p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'product', method: :delete, data: {confirm: "Are you sure?"}%></p>
+<% if @product.merchant == current_merchant %>
+  <p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_merchant_product', method: :get%></p>
+  <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'merchant_product', method: :delete, data: {confirm: "Are you sure?"}%></p>
+<% end %>
+
+
 
 <%= form_tag @line_items,
   method: :post,
@@ -34,11 +38,11 @@
   <% end %>
 <% end %>
 
-<p>  <%= link_to 'See All Product Reviews!', product_reviews_path(@product.id) %> </p>
-<p>  <%= link_to 'Add A Review!', new_product_review_path(@product.id) %> </p> <%# Don't allow a merchant to add their own product review  %>
+<p>  <%= link_to 'See All Product Reviews!', merchant_product_reviews_path(@merchant.id, @product.id) %> </p>
+<p>  <%= link_to 'Add A Review!', new_merchant_product_review_path(@merchant.id, @product.id) %> </p> <%# Don't allow a merchant to add their own product review  %>
 
 <p>
-  <%= link_to 'See All Products', products_path %>
+  <%= link_to 'See All Products', all_products_path %>
 </p>
 
 
