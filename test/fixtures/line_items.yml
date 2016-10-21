@@ -1,5 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   qty: 1
   price: 1
@@ -12,4 +11,4 @@ two:
   price: 1
   order_id:
   product_id:
-  merchant_id: 
+  merchant_id:
