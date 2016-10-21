@@ -1,4 +1,4 @@
-### MERCHANT SHOW VIEW ###
+<%# ### MERCHANT SHOW VIEW ### %>
   <p><%= button_to 'Add a Product', new_product_path(params[:id]), class: "button", method: :get %></p>
   <p><%= button_to 'View Products', merchant_products_path(params[:id]), class: "button", method: :get %></p>
   <p><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></p>
@@ -31,8 +31,7 @@
     <h2>Revenue</h2>
     <p>Total Revenue for Pending Orders: </p>
     <p>$
-      <%# if  %>
-      <%#= sprintf "%.2f", @merchant.revenue_paid_orders %></p>
+      <%= sprintf "%.2f", @merchant.revenue_pending_orders %></p>
     <p>Total Revenue for Paid Orders:</p>
     <p>$ <%= sprintf "%.2f", @merchant.revenue_paid_orders %></p>
     <p>Total Revenue for Cancelled Orders:</p>
