@@ -1,7 +1,10 @@
 # Merchant Model
 class Merchant < ActiveRecord::Base
   has_many :products
-  has_many :orders
+  has_many :placed_orders, :class_name => "Order"
+  has_many :orders, :through => :products
+  alias_attribute(:customer_orders, :orders)
+  
   validates :name, :email, presence: true
   validates :email, uniqueness: true
 
