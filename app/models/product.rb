@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
-  has_many :product_orders
-  has_many :orders, :through => :product_orders
+  has_many :line_items
+  has_many :orders, :through => :line_items
 
   has_many :product_categories
   has_many :categories, :through => :product_categories
