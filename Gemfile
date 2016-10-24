@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+#Foundation Rails gem
+gem 'foundation-rails'
+gem 'jquery-turbolinks'
 gem "awesome_print"
 gem "omniauth"
 gem "omniauth-github"
