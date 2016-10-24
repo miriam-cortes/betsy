@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Betsy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Not Yetsy" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
     <% if current_merchant != nil %>
       <%= link_to("Log out", sessions_destroy_path, method: :delete) %>
       <%= link_to("My account", merchant_path(current_merchant.id), method: :get) %>
@@ -17,14 +22,36 @@
       </ul>
     <% end %>
 
-    <% if flash[:notice] %>
-      <p class="flash-notice"> <%= flash[:notice] %></p>
+  <% if flash[:notice] %>
+    <p class="flash-notice"> <%= flash[:notice] %></p>
+  <% end %>
+
+<div class="top-bar">
+  <ul class="dropdown menu" data-dropdown-menu>
+    <li class="menu-text">Not Yetsy</li>
+    <% @top_catgories.each do |category| %>
+      <li><%= link_to(category.name, category_path(category.id)) %></li>
     <% end %>
+    <!-- <ul class="dropdown menu" data-dropdown-menu> -->
+      <li>
+        <a>More Categories</a>
+        <ul class="menu">
+          <% @lesser_categories.each do |category| %>
+            <li><%= link_to(category.name, category_path(category.id)) %></li>
+          <% end %>
+        </ul>
+      </li>
+    <!-- </ul> -->
+  </ul>
+</div>
 
-  </header>
 
-  <h1><%= greeting %></h1>
-<%= yield %>
 
-</body>
+</header>
+
+<h1><%= greeting %></h1>
+
+    <%= yield %>
+
+  </body>
 </html>

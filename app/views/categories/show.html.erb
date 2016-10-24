@@ -3,6 +3,6 @@
 <h2><% @products_in_category.each do |p| %></h2>
    <div>
    <%= p.name %></br>
-   <%= link_to image_tag(p.image), product_path(p.id) %>
+   <%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %>
    </div>
 <% end %>
