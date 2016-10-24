@@ -13,13 +13,14 @@
 
   <body>
     <header>
-  <% if current_merchant != nil %>
-    <%= link_to("Log out", 'sessions/destroy', method: :delete) %>
-  <% else %>
-    <ul>
-      <li><%= link_to("log in via Github", "/auth/github") %></li>
-    </ul>
-  <% end %>
+    <% if current_merchant != nil %>
+      <%= link_to("Log out", sessions_destroy_path, method: :delete) %>
+      <%= link_to("My account", merchant_path(current_merchant.id), method: :get) %>
+    <% else %>
+      <ul>
+        <li><%= link_to("log in via Github", "/auth/github") %></li>
+      </ul>
+    <% end %>
 
   <% if flash[:notice] %>
     <p class="flash-notice"> <%= flash[:notice] %></p>

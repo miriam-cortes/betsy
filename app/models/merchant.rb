@@ -4,7 +4,7 @@ class Merchant < ActiveRecord::Base
   has_many :placed_orders, :class_name => "Order"
   has_many :orders, :through => :products
   alias_attribute(:customer_orders, :orders)
-  
+
   validates :name, :email, presence: true
   validates :email, uniqueness: true
 
@@ -38,6 +38,88 @@ class Merchant < ActiveRecord::Base
       end
     end
     return revenue_total
+  end
+
+  def revenue_cancelled_orders
+    revenue_total = 0.0
+    orders.each do |order|
+      if order.order_status == "cancelled"
+        revenue_total += order.total_amount
+      end
+    end
+    return revenue_total
+  end
+
+  def revenue_completed_orders
+    revenue_total = 0.0
+    orders.each do |order|
+      if order.order_status == "completed"
+        revenue_total += order.total_amount
+      end
+    end
+    return revenue_total
+  end
+
+  def total_revenue
+    revenue_total = 0.0
+    orders.each do |order|
+      if order.order_status == "cancelled"
+      else
+        revenue_total += order.total_amount
+      end
+    end
+    return revenue_total
+  end
+
+  def pending_orders
+    pending = 0
+    orders.each do |order|
+      if order.order_status == "pending"
+        pending += 1
+      end
+    end
+    return pending
+  end
+
+  def cancelled_orders
+    cancelled = 0
+    orders.each do |order|
+      if order.order_status == "cancelled"
+        cancelled += 1
+      end
+    end
+    return cancelled
+  end
+
+  def paid_orders
+    paid = 0
+    orders.each do |order|
+      if order.order_status == "paid"
+        paid += 1
+      end
+    end
+    return paid
+  end
+
+  def completed_orders
+    completed = 0
+    orders.each do |order|
+      if order.order_status == "completed"
+        completed += 1
+      end
+    end
+    return completed
+  end
+
+  def total_orders
+    total = 0
+    orders.each do |order|
+      if order.order_status == "cancelled"
+      else
+        total += 1
+      end
+    end
+    return total
   end
 
   # def orders_count
