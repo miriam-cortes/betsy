@@ -12,6 +12,10 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    if current_merchant != nil && @merchant = current_merchant
+      flash[:notice] = "Cannot Review Your Own Product"
+      redirect_to merchant_product_path(@merchant.id, @product.id)
+    end
     @review = Review.new
     @post_path = merchant_product_reviews_path
     @post_method = :post
@@ -32,16 +36,24 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    if @merchant.id = @product.merchant_id
+      flash[:notice] = "Cannot Review Your Own Product"
+      redirect_to merchant_product_path(@merchant.id, @product.id)
+    end
   end
 
   def update
   end
 
   def destroy
+    if @merchant.id = @product.merchant_id
+      flash[:notice] = "Cannot Delete Your Own Product's Reviews"
+      redirect_to merchant_product_path(@merchant.id, @product.id)
+    end
     @review = find_review
     if @review.class == Review
       @review.destroy
-      redirect_to merchant_product_path(@product.id)
+      redirect_to merchant_product_path(@merchant.id, @product.id)
     end
   end
 

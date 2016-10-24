@@ -9,3 +9,7 @@
     <p> <%= button_to "Delete Review", {controller: 'reviews', action: 'destroy', product_id: @product.id, id: review.id}, method: :delete, data: {confirm: "Are you sure?"}%></p>
   </article>
 <% end %>
+
+<p>
+  <%= link_to "Back to Product", merchant_product_path(@merchant.id, @product.id) %>
+</p>
