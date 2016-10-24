@@ -20,6 +20,16 @@
       <p class="flash-notice"> <%= flash[:notice] %></p>
     <% end %>
 
+  <div class="top-bar">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Not Yetsy</li>
+      <% @top_catgories.each do |category| %>
+        <li><%= link_to(category.name, category_path(category.id)) %></li>
+      <% end %>
+      
+    </ul>
+  </div>
+
   </header>
 
   <h1><%= greeting %></h1>
