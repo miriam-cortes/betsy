@@ -49,11 +49,13 @@ class ReviewsController < ApplicationController
     if @merchant.id = @product.merchant_id
       flash[:notice] = "Cannot Delete Your Own Product's Reviews"
       redirect_to merchant_product_path(@merchant.id, @product.id)
+      return
     end
     @review = find_review
     if @review.class == Review
       @review.destroy
       redirect_to merchant_product_path(@merchant.id, @product.id)
+      return
     end
   end
 
@@ -63,7 +65,9 @@ class ReviewsController < ApplicationController
     if Product.exists?(params[:product_id].to_i) == true
       return @product = Product.find(params[:product_id].to_i)
     else
-      render :status => 404
+      redirect_to merchant_path(@merchant.id)
+      flash[:notice] = "Product Not Found"
+      return
     end
   end
 
@@ -72,7 +76,9 @@ class ReviewsController < ApplicationController
     if Merchant.exists?(@product.merchant_id) == true
       return @merchant = Merchant.find(@product.merchant_id)
     else
-      render :status => 404
+      redirect_to categories_path
+      flash[:notice] = "Merchant Not Found"
+      return
     end
   end
 
@@ -80,7 +86,9 @@ class ReviewsController < ApplicationController
     if Review.exists?(params[:id].to_i) == true
       return @review = Review.find(params[:id].to_i)
     else
-      render :status => 404
+      redirect_to merchant_product_path(@merchant.id, @product.id)
+      flash[:notice] = "Review Not Found"
+      return
     end
   end
 
