@@ -1,6 +1,6 @@
 <ul>
   <li><%= button_to 'Add a Product', new_merchant_product_path(@merchant.id, params[:product_id]), class: "button", method: :get %></li>
-  <li><%= button_to 'View Products', merchant_products_path(@merchant.id, params[:id]), class: "button", method: :get %></li>
+  <li><%= button_to 'View Products', merchant_products_path(@merchant.id), class: "button", method: :get %></li>
   <li><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></li>
 </ul>
 

@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 orderone:
-  total_amount: 1
+  total_amount: 100
   guest_id: 1
   merchant_id: 1
   card_name: visa
@@ -16,7 +16,7 @@ orderone:
   order_status: pending
 
 two:
-  total_amount: 1
+  total_amount: 200
   guest_id: 1
   merchant_id: 1
   card_name: MyString
@@ -28,3 +28,4 @@ two:
   shipping_city: MyString
   shipping_state: MyString
   shipping_zip: 1
+  order_status: paid
