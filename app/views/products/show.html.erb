@@ -11,8 +11,6 @@
   <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'merchant_product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 <% end %>
 
-
-
 <%= form_for @line_item,
   method: :post,
   url: new_order_path do |f| %>
