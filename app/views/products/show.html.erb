@@ -1,4 +1,5 @@
 
+
 <h1><%= @product.name %></h1>
 <p><%= image_tag(@product.image, size: "200x275", alt: "Photo of #{@product.name}.") %> </p>
 <p> Description: <%= @product.description %></p>
@@ -7,7 +8,7 @@
 <p>  Rating: <%= @product.rating == nil ? "Not Yet Rated!" : star_string(@product.rating) %></p>
 
 <% if @product.merchant == current_merchant %>
-  <p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_merchant_product', method: :get%></p>
+  <p> <%= button_to "Edit Product", {controller: 'products', action: 'edit'}, path: 'edit_merchant_product', method: :get %></p>
   <p> <%= button_to "Delete Product", {controller: 'products', action: 'destroy'}, path: 'merchant_product', method: :delete, data: {confirm: "Are you sure?"}%></p>
 <% end %>
 
@@ -31,7 +32,7 @@
       <p><%= star_string(review.stars) %></p>
       <p><%= review.description %></p>
       <p> <%= "By: #{review.author}" if review.author != ''  %></p>
-      <p> <%= button_to "Delete Review", {controller: 'reviews', action: 'destroy'}, path: 'merchant_product_review_path', merchant_id: @merchant.id, product_id: @product.id, id: review.id}, method: :delete, data: {confirm: "Are you sure?"}%></p>
+      <p> <%= link_to "Delete Review", merchant_product_review_path(@merchant.id, @product.id, review.id), method: :delete, data: {confirm: "Are you sure?"}%></p>
     </article>
   <% end %>
 <% end %>

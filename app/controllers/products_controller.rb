@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    puts "Products is NIL" if @product == nil
     @reviews = @product.reviews.order('stars desc, id').limit(3)
     @line_item = LineItem.new ### OR Line.new
   end
@@ -21,8 +22,7 @@ class ProductsController < ApplicationController
     @post_method = :post
   end
 
-  def create
-    @params = params
+  def create 
     @product = Product.new(product_params)
     @product.price = (product_params[:price].to_f * 100).to_i
     # @product.merchant_id = @merchant.id
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @post_path = merchant_product_path(@merchant.id)
+    @post_path = merchant_product_path(@merchant.id, @product.id)
     @post_method = :put
   end
 
@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
 
   def find_product
     if Product.exists?(params[:id].to_i) == true
-      return @product = Product.find(params[:id].to_i)
+      return @product = Product.find_by(id: params[:id].to_i)
     else
       render :status => 404
     end
