@@ -26,6 +26,7 @@ root to: 'products#all_products'
   delete 'sessions/destroy' => 'sessions#destroy'
 
   get 'products/all_products' => 'products#all_products', as: 'all_products'
+  patch 'orders/add_to_cart' => 'orders#add_to_cart', as: 'add_to_cart'
 
   # get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
 
