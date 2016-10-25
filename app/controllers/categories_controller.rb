@@ -21,9 +21,13 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to categories_path
     else
+      @error = "Did not save successfully. Please try again."
       render :new
     end
+    end
   end
+
+
 
   def edit
   end
