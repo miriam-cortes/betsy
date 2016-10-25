@@ -26,12 +26,13 @@ class ApplicationController < ActionController::Base
     if current_guest.present?
       #get cart from current guest cart
     return current_guest.cart
+
     end
   end
 
 
-    @current_guest ||= Guest.find_by(id: session[:user_id].to_i)
-  end
+    # @current_guest ||= Guest.find_by(id: session[:user_id].to_i)
+
 
 
 end

@@ -13,19 +13,32 @@
 
 
 
-<%= form_tag @line_items,
-  method: :post,
-  url: orders_path do |f| %>
-  <div class="form_attribute">
-    <div class="form_attribute">
-      <%= f.label :qty %>
-    <%= f.text_area :qty %>
-    </div>
- <%= f.submit "Add to Cart "%>
-  </div>
-<% end %>
 
-<!-- <p> <%= button_to "Add to Cart", orders_path(product_id: @product.id), method: :post%></p> -->
+
+<div class="row">
+  <div class="col-xs-8">
+    <h4><%= @product.name %></small></h4>
+
+  </div>
+  <div class="col-xs-4">
+
+    <%= form_for(controller: "orders", action: "add_to_cart", method: "post")  do |f| %>
+    <h5>Price:<%= @product.price %></h5>
+      <div class="input-group">
+        <%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
+        <div class="input-group-btn">
+          <%= f.hidden_field :product_id, value: @product.id %>
+          <%= f.hidden_field :merchant_id, value: @product.merchant_id %>
+          <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+
 
 <% if @reviews != nil %>
   <% @reviews.each do |review| %>

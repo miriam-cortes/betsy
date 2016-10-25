@@ -4,7 +4,7 @@ class Merchant < ActiveRecord::Base
   has_many :placed_orders, :class_name => "Order"
   has_many :orders, :through => :products
   alias_attribute(:customer_orders, :orders)
-  
+
   validates :name, :email, presence: true
   validates :email, uniqueness: true
 
@@ -38,6 +38,11 @@ class Merchant < ActiveRecord::Base
       end
     end
     return revenue_total
+  end
+
+  def cart
+    #find cart from merchant orders
+    self.placed_orders.find_or_create_by(:order_status => "pending")
   end
 
   # def orders_count

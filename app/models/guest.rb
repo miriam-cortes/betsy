@@ -13,4 +13,6 @@ class Guest < ActiveRecord::Base
     #return the cart
   end
 
+  
+
 end
