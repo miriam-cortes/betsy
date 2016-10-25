@@ -122,6 +122,11 @@ class Merchant < ActiveRecord::Base
     return total
   end
 
+  def cart
+    #find cart from merchant orders
+    self.placed_orders.find_or_create_by(:order_status => "pending")
+  end
+
   # def orders_count
   #   total_orders = 0
   #   orders.
