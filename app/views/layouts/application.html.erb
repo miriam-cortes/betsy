@@ -15,6 +15,13 @@
         <li><%= link_to("log in via Github", "/auth/github") %></li>
       </ul>
     <% end %>
+    <% if current_cart != nil %>
+      <%= link_to("View Cart", 'orders/show', method: :get) %>
+    <% else %>
+      <ul>
+        <li><p>You have nothing in your cart to show.</li>
+      </ul>
+    <% end %>
 
     <% if flash[:notice] %>
       <p class="flash-notice"> <%= flash[:notice] %></p>
