@@ -11,9 +11,11 @@ class Order < ActiveRecord::Base
   #once the line is added return the user back to the product page
     line = LineItem.new
     line.product = product
-    line.merchant = product.merchant
+    line.merchant_id = product.merchant_id
     line.qty = qty
     line.price = product.price
     line_items << line
   end
+
+  
 end
