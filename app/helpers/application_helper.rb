@@ -3,8 +3,12 @@ module ApplicationHelper
 
   def star_string(rating)
     printed_stars = ""
-    rating.times {|x| printed_stars << "★"}
-    (5-rating).times {|x| printed_stars << "☆"}
+    if rating == nil
+      printed_stars = "Not Yet Reviewed"
+    else
+      rating.times {|x| printed_stars << "★"}
+      (5-rating).times {|x| printed_stars << "☆"}
+    end
     printed_stars.html_safe
   end
 

@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
       return total_rating/reviews.length
       # Do we want the average to round up or down? Should I add one??
     else
-      return total_rating
+      total_rating = nil
     end
   end
 
