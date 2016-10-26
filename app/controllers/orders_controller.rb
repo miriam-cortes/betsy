@@ -3,7 +3,11 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def view_cart
+  def show
+
+    #get list of items for this guest or merchant_id
+    @order_items = LineItem.where(order_id: current_cart.id)
+
   end
 
   def new
@@ -12,19 +16,7 @@ class OrdersController < ApplicationController
   def create
   end
 
-  def subtotal
-    @order.line_items do |line|
-    line_cost = @line.price * @line.qty
-    total_amount << line_cost
-    return total_amount
-    end
-  end
-
-    def total_amount
-      subtotal
-      total_amount.inject { |result, element| result + element }
-      return result
-    end
+  
 
 
 
