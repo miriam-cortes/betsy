@@ -17,7 +17,7 @@
         <tr>
           <th><%= link_to(order.id, orders_path(order.id)) %></th>
             <% order.products.each do |product| %>
-              <th><%= link_to(product.name, product_path(@merchant.id, product.id)) %></th>
+              <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
             <% end %>
           <th><%#= order.status %></th>
         </tr>
