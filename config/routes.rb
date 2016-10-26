@@ -27,7 +27,7 @@ root to: 'products#all_products'
 
   get 'products/all_products' => 'products#all_products', as: 'all_products'
   post 'orders/add_to_cart' => 'orders#add_to_cart', as: 'add_to_cart'
-  
+  # get 'orders/view_cart' => 'orders#view_cart', as: view_cart
 
   # get 'merchants/:id/products' => 'merchants#show_merchant_products', as: 'merchant_products'
 

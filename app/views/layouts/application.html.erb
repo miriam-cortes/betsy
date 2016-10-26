@@ -16,7 +16,7 @@
       </ul>
     <% end %>
     <% if current_cart != nil %>
-      <%= link_to("View Cart", 'orders/show', method: :get) %>
+      <%= link_to("View Cart", 'orders/view_cart', method: :get) %>
     <% else %>
       <ul>
         <li><p>You have nothing in your cart to show.</li>
