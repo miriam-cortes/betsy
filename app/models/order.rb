@@ -16,4 +16,6 @@ class Order < ActiveRecord::Base
     line.price = product.price
     line_items << line
   end
+
+  
 end

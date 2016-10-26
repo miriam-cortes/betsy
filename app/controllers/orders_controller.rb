@@ -16,19 +16,7 @@ class OrdersController < ApplicationController
   def create
   end
 
-  def subtotal
-    @order_items.each do |line|
-    line_cost = line.price * line.qty
-    total_amount << line_cost
-    return total_amount
-    end
-  end
-
-    def total_amount
-      subtotal
-      total_amount.inject { |result, element| result + element }
-      return result
-    end
+  
 
 
 
