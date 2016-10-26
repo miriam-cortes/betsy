@@ -22,7 +22,12 @@
     <%= f.label :image %>
     <%= f.text_field :image %>
   </div>
+  <div>
+    <%= f.label :categories %>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  </div>
   <div class="form_attribute">
     <%= f.submit %>
   </div>
+
 <% end %>

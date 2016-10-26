@@ -21,9 +21,12 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to categories_path
     else
-      render :new
+      flash[:notice] = "Did not save successfully. Please check that this category does not already exist and try again."
+      redirect_to categories_path
     end
   end
+
+
 
   def edit
   end
