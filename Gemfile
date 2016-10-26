@@ -6,6 +6,7 @@ gem 'jquery-turbolinks'
 gem "awesome_print"
 gem "omniauth"
 gem "omniauth-github"
+
 #gem 'pg', group: :production
 #gem 'rails_12factor', group: :production
 

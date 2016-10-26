@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @post_path = merchant_products_path(@merchant.id)
     @post_method = :post
+    @category = Category.order("lower(name) ASC").all
   end
 
   def create 
@@ -28,7 +29,6 @@ class ProductsController < ApplicationController
     # @product.merchant_id = @merchant.id
     @product.rating = nil
     @product.merchant_id = @merchant.id
-
     if @product.save
       redirect_to merchant_product_path(@merchant.id, @product.id)
     else
@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :image, :inventory, :rating)
+    params.require(:product).permit(:name, :description, :price, :image, :inventory, :rating, category_ids: [])
   end
 
 end
