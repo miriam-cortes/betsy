@@ -31,7 +31,7 @@ class ProductTest < ActiveSupport::TestCase
 
   end
 
-  test "No Rating has the correct reviews" do
+  test "No_Rating has the correct reviews" do
     assert_includes products(:no_rating).reviews, reviews(:rating_review_one)
     assert_includes products(:no_rating).reviews, reviews(:rating_review_two)
   end
