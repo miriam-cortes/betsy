@@ -3,34 +3,34 @@ one:
   qty: 1
   price: 300
   order: orderone
-  product: new_shoe
+  product: poop
 
 two:
   qty: 1
   price: 200
   order: two
-  product: new_shoe
+  product: poop
 
 three:
   qty: 1
   price: 300
   order: three
-  product: new_shoe
+  product: poop
 
 four:
   qty: 1
   price: 300
   order: four
-  product: new_shoe
+  product: poop
 
 five:
   qty: 1
   price: 300
   order: five
-  product: new_shoe
+  product: poop
 
 six:
   qty: 1
   price: 300
   order: six
-  product: new_shoe
+  product: poop

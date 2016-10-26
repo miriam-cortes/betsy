@@ -4,7 +4,7 @@ glitter_review:
   description: "nfjd"
   stars: 3
   author: "fndjk"
-  product: :glitter
+  product: glitter
 
 shoe_review:
   description: "mkd"

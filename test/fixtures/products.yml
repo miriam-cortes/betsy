@@ -5,7 +5,7 @@ new_shoe:
   description: "A beautiful shoe!"
   price: 300
   image: 'http://placekitten.com/200/300'
-  merchant: one
+  merchant: three
   inventory: 4
   rating: 3
 
@@ -14,7 +14,7 @@ glitter:
   description: "a glittery wand"
   price: 1500
   image: 'http://placekitten.com/200/300'
-  merchant_id: 2
+  merchant: three
   inventory: 7
   rating: 5
 
@@ -23,5 +23,14 @@ no_rating:
   description: "a glittery wand"
   price: 1500
   image: 'http://placekitten.com/200/300'
-  merchant_id: 2
+  merchant: four
   inventory: 7
+
+poop:
+  name: "A poop!"
+  description: "on your beautiful shoe!"
+  price: 300
+  image: 'http://placekitten.com/200/300'
+  merchant: one
+  inventory: 4
+  rating: 3
