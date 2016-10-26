@@ -24,7 +24,9 @@
           <%= hidden_field_tag :product_id, item.product_id %>
           <%= hidden_field_tag :id, item.id %>
           <td><%= submit_tag "Update Quantity", class: "btn btn-default" %></td>
+          <td><%= button_to 'Remove from Cart', {action: "destroy", id: item.id}, method: :delete, data: {confirm: "Are you sure?"} %></td>
         </tr>
+
       <% end %>
 
 <% end %>

@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   def create
   end
 
-  
+
 
 
 
@@ -28,6 +28,8 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    @order_items = LineItem.destroy(params[:id])
+    redirect_to action:"show"
   end
 
  def find_product
