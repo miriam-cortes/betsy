@@ -1,14 +1,36 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 one:
   qty: 1
-  price: 1
-  order_id:
-  product_id:
-  merchant_id:
+  price: 300
+  order: orderone
+  product: new_shoe
 
 two:
   qty: 1
-  price: 1
-  order_id:
-  product_id:
-  merchant_id:
+  price: 200
+  order: two
+  product: new_shoe
+
+three:
+  qty: 1
+  price: 300
+  order: three
+  product: new_shoe
+
+four:
+  qty: 1
+  price: 300
+  order: four
+  product: new_shoe
+
+five:
+  qty: 1
+  price: 300
+  order: five
+  product: new_shoe
+
+six:
+  qty: 1
+  price: 300
+  order: six
+  product: new_shoe

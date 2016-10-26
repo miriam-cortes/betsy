@@ -5,7 +5,7 @@ new_shoe:
   description: "A beautiful shoe!"
   price: 300
   image: 'http://placekitten.com/200/300'
-  merchant_id: 1
+  merchant: one
   inventory: 4
   rating: 3
 
