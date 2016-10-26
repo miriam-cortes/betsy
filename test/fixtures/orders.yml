@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 orderone:
-  total_amount: 1
+  total_amount: 300
   guest_id: 1
-  merchant_id: 1
+  merchant: one
   card_name: visa
   card_number: 123456789012
   card_exp: 02/16
@@ -13,12 +13,12 @@ orderone:
   shipping_city: City
   shipping_state: State
   shipping_zip: 12345
-  order_status: pending
+  order_status: paid
 
 two:
-  total_amount: 1
+  total_amount: 200
   guest_id: 1
-  merchant_id: 1
+  merchant: one
   card_name: MyString
   card_number: 1
   card_exp: MyString
@@ -28,3 +28,64 @@ two:
   shipping_city: MyString
   shipping_state: MyString
   shipping_zip: 1
+  order_status: paid
+
+three:
+  total_amount: 300
+  guest_id: 1
+  merchant: one
+  card_name: MyString
+  card_number: 1
+  card_exp: MyString
+  card_cvv: 1
+  billing_zip: 1
+  shipping_street: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: 1
+  order_status: pending
+
+four:
+  total_amount: 300
+  guest_id: 1
+  merchant: one
+  card_name: MyString
+  card_number: 1
+  card_exp: MyString
+  card_cvv: 1
+  billing_zip: 1
+  shipping_street: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: 1
+  order_status: pending
+
+five:
+  total_amount: 300
+  guest_id: 1
+  merchant: one
+  card_name: MyString
+  card_number: 1
+  card_exp: MyString
+  card_cvv: 1
+  billing_zip: 1
+  shipping_street: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: 1
+  order_status: completed
+
+six:
+  total_amount: 300
+  guest_id: 1
+  merchant: one
+  card_name: MyString
+  card_number: 1
+  card_exp: MyString
+  card_cvv: 1
+  billing_zip: 1
+  shipping_street: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: 1
+  order_status: cancelled
