@@ -25,3 +25,12 @@ no_rating:
   image: 'http://placekitten.com/200/300'
   merchant: four
   inventory: 7
+
+poop:
+  name: "A poop!"
+  description: "on your beautiful shoe!"
+  price: 300
+  image: 'http://placekitten.com/200/300'
+  merchant: one
+  inventory: 4
+  rating: 3

@@ -7,6 +7,7 @@ gem "awesome_print"
 gem "omniauth"
 gem "omniauth-github"
 
+gem 'simplecov', group: :test
 #gem 'pg', group: :production
 #gem 'rails_12factor', group: :production
 
