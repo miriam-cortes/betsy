@@ -1,71 +1,65 @@
 class OrdersController < ApplicationController
-  # def index
-  #   @orders = Order.all
-  # end
-  #
-  # def view_cart
-  # end
-  #
-  # def new
-  # end
-  #
-  # def create
-  # end
-  #
-  # def subtotal
-  #   @order.line_items do |line|
-  #     line_cost = @line.price * @line.qty
-  #     total_amount << line_cost
-  #     return total_amount
-  #   end
-  # end
-  #
-  # def total_amount
-  #   subtotal
-  #   total_amount.inject { |result, element| result + element }
-  #   return result
-  # end
-  #
-  # def edit
-  # end
-  #
-  # def update
-  # end
-  #
-  # def destroy
-  # end
-  #
-  # def guest_create_cart
-  #   if current_merchant.nil? && @order.guest_id.nil?
-  #     @guest = Guest.new
-  #     @guest.save
-  #     @order = Order.new
-  #     @order.guest_id = @guest.id
-  #     @order.order_status = "pending"
-  #     @order.save
-  #     @line = LineItem.new
-  #     @line.order_id = @order.id
-  #     @line.product_id = params[:products][:product_id]
-  #     @line.merchant_id = params[:products][:merchant_id]
-  #     @line.qty = params[:qty]
-  #     @line.price = params[:products][:price]
-  #     @line.save
-  #   else
-  #     add_to_cart
-  #   end
-  # end
-  # def add_to_cart
-  #   @line = LineItem.new
-  #   @line.order_id = @order.id
-  #   @line.product_id = params[:products][:product_id]
-  #   @line.merchant_id = params[:products][:merchant_id]
-  #   @line.qty = params[:qty]
-  #   @line.price = params[:products][:price]
-  #   @line.save
-  # end
-  #
-  # def remove_from_cart
-  #   @line = @order.line_items.find(params[:id])
-  #     @line.id.destroy(params[:id].to_i)
-  # end
-end
+  def index
+    @orders = Order.all
+  end
+
+  def view_cart
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  def subtotal
+    @order.line_items do |line|
+    line_cost = @line.price * @line.qty
+    total_amount << line_cost
+    return total_amount
+    end
+  end
+
+    def total_amount
+      subtotal
+      total_amount.inject { |result, element| result + element }
+      return result
+    end
+
+
+
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+ def find_product
+   #cusomer product page and clicks add product_id
+   Product.find_by(id: params[:product_id] || params[:id])
+   #need to take the id use it to find product
+ end
+
+   def add_to_cart
+     product = find_product
+     cart = current_cart
+     cart.add_product(product, params[:qty])
+    #  current_cart.add_product(find_product)
+    redirect_to root_path
+   end
+
+
+
+    # def remove_from_cart
+    #   @line = @order.line_items.find(params[:id])
+    #     @line.id.destroy(params[:id].to_i)
+    # end
+
+
+
+
+end#end of class
