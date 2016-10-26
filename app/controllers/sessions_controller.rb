@@ -8,11 +8,12 @@ class SessionsController < ApplicationController
     if @merchant.nil?
       @merchant = Merchant.build_from_github(auth_hash)
       flash[:notice] = "Unable to save the Merchant"
+      return redirect_to root_path unless @merchant.save
     end
 
     #Save the merchant ID in the session
     session[:merchant_id] = @merchant.id.to_i
-
+    # binding.pry
     redirect_to merchant_path(@merchant.id)
   end
 
