@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   def create
     @params = params
     @product = Product.new(product_params)
+    @product.price = (product_params[:price].to_f * 100).to_i
     # @product.merchant_id = @merchant.id
     @product.rating = nil
     @product.merchant_id = @merchant.id
@@ -45,6 +46,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
+      @product.price = (product_params[:price].to_f * 100).to_i
       @product.rating
       redirect_to merchant_product_path(@merchant.id, @product.id)
     else

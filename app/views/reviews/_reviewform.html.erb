@@ -4,7 +4,7 @@
   url: @post_path do |f| %>
   <div class="form_attribute">
     <%= f.label :stars %>
-    <%= f.number_field :stars %>
+    <%= f.select(:stars, (0..5).map{|index| [star_string(index), index]}, {include_blank: true}) %>
   </div>
   <div class="form_attribute">
     <%= f.label :description %>
