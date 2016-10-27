@@ -25,8 +25,19 @@ class OrdersController < ApplicationController
   end
 
   def update
-
-  end
+    cart = current_cart
+    cart.card_name = params[:card_name]
+    cart.card_exp = params[:card_exp]
+    cart.shipping_street = params[:shipping_street]
+    cart.shipping_city = params[:shipping_city]
+    cart.shipping_state = params[:shipping_state]
+    cart.card_number = params[:card_number]
+    cart.card_cvv = params[:card_cvv]
+    cart.billing_zip = params[:billing_zip]
+    cart.shipping_zip = params[:shipping_zip]
+    cart.order_status == "Complete"
+    cart.save
+    end
 
   def destroy
     @order_items = LineItem.destroy(params[:id])
@@ -61,8 +72,11 @@ class OrdersController < ApplicationController
     end
 
 
+    def checkout
 
-      
+
+    end
+
 
 
 end#end of class
