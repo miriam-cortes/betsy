@@ -40,6 +40,7 @@ CSV.foreach('seeds_csvs/reviews.csv') do |csv_obj|
   Review.create(id: csv_obj[0].to_i, product_id: csv_obj[1].to_i, description: csv_obj[2], author: csv_obj[3], stars: csv_obj[4].to_i)
 end
 
+
 begin
   require "pg"
   array = [Merchant, Product, ProductOrder, Category, Review, Guest, Order, ProductCategory]
