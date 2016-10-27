@@ -7,9 +7,9 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.where(product_id: @product.id)
   end
-
-  def show
-  end
+  # 
+  # def show
+  # end
 
   def new
     if current_merchant != nil && @merchant.name == current_merchant.name

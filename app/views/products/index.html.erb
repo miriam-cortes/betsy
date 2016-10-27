@@ -1,11 +1,14 @@
-<h1>Your NotYetsy Products</h1>
+<h2 class="page-header"> Products for <%= @merchant.name %> </h2>
 
+<div class="row">
 <% @products.each do |product| %>
-  <article>
-    <p>  <%= link_to product.name, merchant_product_path(@merchant.id, product.id) %>  </p>
+  <article class="column small-6 medium-4 large-3">
+    <p class="product-name">  <%= link_to product.name, merchant_product_path(@merchant.id, product.id) %>  </p>
     <p>  <%= image_tag(product.image, size: "200x300", alt: "Photo of #{product.name}.") %>  </p>
   </article>
 <% end %>
+</div>
+
 
 <% if current_merchant != nil %>
   <p>  <%= link_to "Add New Product", new_merchant_product_path(@merchant.id) %></p>
