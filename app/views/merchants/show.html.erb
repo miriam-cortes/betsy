@@ -18,7 +18,7 @@
           <tr>
             <th><%= link_to(order.id, order_path(order.id)) %></th>
             <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
-            <th><%#= product.status %></th>
+            <th><%= order.order_status %></th>
           </tr>
             <% end %>
       <% end %>
@@ -41,6 +41,7 @@
     <p>Total Net Revenue:</p>
     <p><%= number_to_currency(@merchant.total_revenue/100.0) %></p>
   </div>
+
   <div>
     <h2>Orders</h2>
     <p>Total Pending Orders: </p>
