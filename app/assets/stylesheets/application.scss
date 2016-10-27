@@ -1,4 +1,4 @@
-@import url('foundation.css')
+@import url('foundation.css');
 // /*
 //  * This is a manifest file that'll be compiled into application.css, which will include all the files
 //  * listed below.
@@ -16,3 +16,34 @@
 //= require foundation_and_overrides
 
  // *= require foundation_and_overrides
+ h1{font-size: 2em;}
+ h2 {font-size: 1.5em;}
+
+ul li {
+  display: inline-block;
+  // width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ul.row {
+  width: 80%;
+
+}
+// .merchant_buttons {
+//   margin-left: auto;
+//   margin-right: auto;
+//   align-items: center;
+//   display: flex;
+// }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.give_me_a_margin {
+  border: 1px solid black;
+}
+body {margin: 1%;}
