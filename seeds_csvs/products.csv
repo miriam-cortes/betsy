@@ -1,10 +1,25 @@
-1,product 1,description 1,37.04,http://placekitten.com/g/200/300,10,9
-2,product 2,description 2,88.38,http://placekitten.com/g/200/300,13,3
-3,product 3,description 3,11.71,http://placekitten.com/g/200/300,5,10
-4,product 4,description 4,73.05,http://placekitten.com/g/200/300,7,1
-5,product 5,description 5,48.57,http://placekitten.com/g/200/300,3,1
-6,product 6,description words,7.39,http://placekitten.com/g/200/300,2,9
-7,product 7,description words,1.9,http://placekitten.com/g/200/300,15,8
-8,product 8,description words,16.89,http://placekitten.com/g/200/300,43,4
-9,product 9,description words,59.13,http://placekitten.com/g/200/300,9,9
-10,product 10,description words,46.05,http://placekitten.com/g/200/300,10,9
+1,Bath Bomb,"Literally a bomb for your bath. Desperate times call for desperate measures. The best way to get out of doing your work is to cause an 'accidental' small explosion at your house. Pro Tip: A bath bomb is also a great way to avoid cleaning your shower.",37.04,bath_bomb.jpg,10,9
+2,Cards Against Humanity,"Cards Against Humanity is a party game for horrible people. Unlike most of the party games you've played before, Cards Against Humanity is as despicable and awkward as you and your friends.",88.38,card_humanity.jpg,13,3
+3,Cat Watch,"As you suspected, this watch doesn't actually tell time. A stylish procrastinator like you needs a sleek and clever looking feline to adorn your wrist, but not actually tell you how much time you've wasted. It's also a great conversation starter if you're trying to charm a hipster. #winning",11.71,cat_watch.jpg,5,10
+4,Drunk Stoned or Stupid,"DRUNK STONED OR STUPID is a party game for you and your stupid friends. Each round a card is drawn and the group decides who in the group would be most likely to do really stupid things.",73.05,drunk_stoned_or_stupid.jpg,7,1
+5,Porcelain Baby Elephant Drinking Wine,"You asked and we delivered. Yes, this porcelain baby elephant is LITERALLY drinking wine. You'll find yourself mesmerized by it's cuteness.",48.57,elephant_wine.jpg,3,1
+6,Eyelash Goggles,"Go scuba diving with style. These sassy lashy goggles take waterproof falsies to a whole new level. Where them while you're swimming for a wet and sexy look, or where them when you're not swimming to attract unwanted attention.",7.39,eyelash_goggles.jpg,2,9
+7,Singing Cardboard Face,"Always wanted a cardboard face? We know. And guess what? This one sings! Our Intelligent Bionic Cardboard Technology will have you guessing whether this is really a piece of art made from recycled boxes or a real human face while it serenades you with 90's boyband songs.",1.9,face.jpg,15,8
+8,Fingerstache,"Charm your lover with these sexy fingerstaches. This pack of far too many temporary tattoos will keep you talking in bad accents all night long.",16.89,finger_stash.jpg,43,4
+9,Flamingo Lights,"Have your friends screaming 'this pad is lit!' every time they visit with this set of LED flamingo lights. Pro Tip: Cool your Yule and avian your Advent by using these feisty flamingo lights on your Christmas Tree.",59.13,flamingo_lights.jpg,9,9
+10,Universe Lollipops,"How many licks does it take to get to the center of the Universe? Help humankind find these answer to this and other rhetorical questions by taking a lick at these yummy universe pops.",46.05,galaxy_lollipops.jpg,10,9
+11,Gorgeous Giraffe Mask,"Gee! Golly! A Giraffe! Spend hours frolicking through your local urban jungle wearing this gorgeous giraffe mask. ",10.05,giraffe.jpg,10,9
+12,Rainbow Hammock,"Find your pot of gold at the end of your rainbow hammock nap. Don't worry, this hammock doesn't only come out when the sun is shining through the rain.",15.75,hamock.jpg,10,9
+13,Hey Girl Tea,"You'll want to take a sick day every day with this tantalizing tea infused with Mucinex and honey.   ",13.34,hey_girl.jpg,10,9
+14,Horse of the Household,"Tired of being Head of the Household? Hand of your responsibilities to this Horse of the Household. She'll lead you and your roommates on the path toward en'light'enment.",100.99,horse_lamp.jpg,10,9
+15,Little Wiener Man,"Waste away your day fiddling with this limited edition Little Wiener Man. Collect this and the other Tiny Meat Men: Frank Furt, Brad Wurst, and Kevin Bacon",16.43,hotdog_lego.jpg,10,9
+16,Rainbow Knives,"Look like you're doing something productive while you're actually doing nothing at all. These nifty knives are so dull that they'll cut nothing at all. You'll look like you're always chopping vegetables, but with these, we promise it will never get done.",21.67,knives.jpg,10,9
+17,Squid Mask,"Haters gonna hate, and you'll make them hate you even more when you wear this knit squid mask. Made with 100% alpaca wool. Hand crafted.",19.62,mask.jpg,10,9
+18,Creepy Mermaid Lego,"We just know you'll want to play with this miserable mermaid just as much as we do. She's made of plastic, it's fantastic.",6.54,mermaid_lego.jpg,10,9
+19,Moustache Clips,"Stache away your favorite passages with these Moustache Clip Page Markers. They come in a variety of lifelike shapes and colors to help you stay organized. These wiry staches are both magnetic and lady magnets.",8.94,mustache_clips.jpg,10,9
+20,Moustache Outlet Covers,"You've always thought the holes in your outlet looked like face. Well, why not make that boring outlet face look like your dad's face? These classy mustache stickers will have you and your friends gawking at the resemblance.",4.58,outlet_stash.jpg,10,9
+21,Tiny Plungers,"These tiny plungers can tackle the tiniest of clogs in the tiniest of toilets. Some assembly required.",12.43,party_plungers.jpg,10,9
+22,Ultimate Procrastinator's Pen Set,"Take forever deciding which color pen you want to use. With more than ten shades of blue to chose from you'll never decide on the perfect one.",21.31,pens.jpg,10,9
+23,Frappe Fake Phone Case,"This fancy Frappe Fake Phone Case doesn't fit a single phone in existence. Really. Not one. Just try making your phone fit. We dare you.",6.54,phone_case.jpg,10,9
+24,Pegg,"Meet Pegg. She's a pig who pukes eggs. Well, egg yolks to be specific. She's the cutest but least efficient way you'll ever find to separate the egg yolks from the whites.",18.24,pig_egg.jpg,10,9
+25,Pizza Floatation Device,"Ever wish you could hit the water on your favorite wedge of pizza. This is your chance. Drowning Warning: Wait twenty minutes after using Pizza Flotation Device before swimming.",27.77,pizza_raft.jpg,10,9
