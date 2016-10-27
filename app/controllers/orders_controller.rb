@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   def create
   end
 
-  
+
 
 
 
@@ -25,9 +25,12 @@ class OrdersController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy
+    @order_items = LineItem.destroy(params[:id])
+    redirect_to action:"show"
   end
 
  def find_product
@@ -51,7 +54,15 @@ class OrdersController < ApplicationController
     #     @line.id.destroy(params[:id].to_i)
     # end
 
+    def update_qty
+      line_item = LineItem.find(params[:line_item_id])
+      line_item.update(qty: params[:qty])
+      redirect_to order_path(current_cart.id)
+    end
 
+
+
+      
 
 
 end#end of class

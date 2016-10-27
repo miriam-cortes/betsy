@@ -19,7 +19,9 @@ root to: 'products#all_products'
     resources :categories
     resources :guests
     #resources :merchants
-    resources :orders
+    resources :orders do
+      post 'update_qty'
+    end
 
   get 'sessions/create'
 
