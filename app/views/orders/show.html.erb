@@ -12,8 +12,9 @@
       <th>Price</th>
       <th>Quantity</th>
       <th></th>
-      <th></th>
       <th>Total</th>
+      <th></th>
+
     </tr>
     <% @order_items.each do |item| %>
       <tr>
@@ -25,9 +26,10 @@
         <td><%= number_field_tag :qty, item.qty.to_i, class: "form_control", min: 1 %></td>
           <%= hidden_field_tag :line_item_id, item.id %>
           <td><%= submit_tag "Update Quantity", class: "btn btn-default" %></td>
-          <td><%= button_to 'Remove from Cart', {action: "destroy", id: item.id}, method: :delete, data: {confirm: "Are you sure?"} %></td>
+
           <td><%= number_to_currency(item.subtotal) %>
             <%end%>
+            <td><%= button_to 'Remove from Cart', {action: "destroy", id: item.id}, method: :delete, data: {confirm: "Are you sure?"} %></td>
             </tr>
           <% end %>
           <tr>
