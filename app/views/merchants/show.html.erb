@@ -1,8 +1,11 @@
-<ul>
-  <li><%= button_to 'Add a Product', new_merchant_product_path(@merchant.id, params[:product_id]), class: "button", method: :get %></li>
-  <li><%= button_to 'View Products', merchant_products_path(@merchant.id), class: "button", method: :get %></li>
-  <li><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></li>
-</ul>
+<div>
+  <ul class="row">
+    <li class="small-2 columns"><%= button_to 'Add a Product', new_merchant_product_path(@merchant.id, params[:product_id]), class: "button", method: :get %></li>
+    <li class="small-2 columns"><%= button_to 'View Products', merchant_products_path(@merchant.id), class: "button", method: :get %></li>
+    <li class="small-2 columns"><%= button_to 'Add a Category', new_category_path(params[:id]), class: "button", method: :get %></li>
+    <li class="small-11 medium-8 large-9 columns"></li>
+  </ul>
+</div>
 
 <article>
   <table>
@@ -13,46 +16,46 @@
         <th>Order Status</th>
       </tr>
 
-      <% @merchant.orders.each do |order| %>
-        <tr>
-          <th><%= link_to(order.id, orders_path(order.id)) %></th>
-            <% order.products.each do |product| %>
-              <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
+      <% @merchant.placed_orders.each do |order| %>
+        <% order.products.each do |product| %>
+          <tr>
+            <th><%= order.id %></th>
+            <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
+            <th><%= order.order_status %></th>
+          </tr>
             <% end %>
-          <th><%#= order.status %></th>
-        </tr>
       <% end %>
     </tbody>
   </table>
 </article>
 
-<container>
-  <h1>Summary</h1>
-  <div>
-    <h2>Revenue</h2>
-    <p>Total Revenue for Pending Orders: </p>
-    <p>$
-      <%= sprintf "%.2f", @merchant.revenue_pending_orders %></p>
-    <p>Total Revenue for Paid Orders:</p>
-    <p>$ <%= sprintf "%.2f", @merchant.revenue_paid_orders %></p>
-    <p>Total Revenue for Cancelled Orders:</p>
-    <p>$ <%= sprintf "%.2f", @merchant.revenue_cancelled_orders %></p>
-    <p>Total Revenue for Completed Orders:</p>
-    <p>$ <%= sprintf "%.2f", @merchant.revenue_completed_orders %></p>
-    <p>Total Net Revenue:</p>
-    <p>$ <%= sprintf "%.2f", @merchant.total_revenue %></p>
+<container class="row">
+  <h1 class="small-12 columns center">Summary</h1>
+  <div class="small-10 medium-8 large-5 columns give_me_a_margin">
+    <h2 class="small-12 columns">Revenue</h2>
+    <p class="small-7  medium-9 large-9 columns">Total Revenue for Pending Orders: </p>
+    <p class="small-2 columns"><%= number_to_currency(@merchant.revenue_pending_orders/100.0) %></p>
+    <p class="small-7  medium-9 large-9 columns">Total Revenue for Paid Orders:</p>
+    <p class="small-2 columns"><%= number_to_currency(@merchant.revenue_paid_orders/100.0) %></p>
+    <p class="small-7  medium-9 large-9 columns">Total Revenue for Cancelled Orders:</p>
+    <p class="small-2 columns"><%= number_to_currency(@merchant.revenue_cancelled_orders/100.0) %></p>
+    <p class="small-7  medium-9 large-9 columns">Total Revenue for Completed Orders:</p>
+    <p class="small-2 columns"><%= number_to_currency(@merchant.revenue_completed_orders/100.0) %></p>
+    <p class="small-7  medium-9 large-9 columns">Total Net Revenue:</p>
+    <p class="small-2 columns"><%= number_to_currency(@merchant.total_revenue/100.0) %></p><p></p>
   </div>
-  <div>
-    <h2>Orders</h2>
-    <p>Total Pending Orders: </p>
+
+  <div class="small-10 medium-8 large-5 columns give_me_a_margin">
+    <h2 class="small-12 columns">Orders</h2>
+    <p class="small-7  medium-9 large-9 columns">Total Pending Orders: </p>
     <p><%= @merchant.pending_orders %></p>
-    <p>Total Cancelled Orders:</p>
+    <p class="small-7  medium-9 large-9 columns">Total Cancelled Orders:</p>
     <p><%= @merchant.cancelled_orders %></p>
-    <p>Total Paid Orders:</p>
+    <p class="small-7  medium-9 large-9 columns">Total Paid Orders:</p>
     <p><%= @merchant.paid_orders %></p>
-    <p>Total Completed Orders:</p>
+    <p class="small-7  medium-9 large-9 columns">Total Completed Orders:</p>
     <p><%= @merchant.completed_orders %></p>
-    <p>Total Orders:</p>
+    <p class="small-7  medium-9 large-9 columns">Total Orders:</p>
     <p><%= @merchant.total_orders %></p>
   </div>
 </container>
