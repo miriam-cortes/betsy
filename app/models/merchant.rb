@@ -22,7 +22,7 @@ class Merchant < ActiveRecord::Base
 
   def revenue_paid_orders
     revenue_total = 0.0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "paid"
         revenue_total += order.total_amount
       end
@@ -32,7 +32,7 @@ class Merchant < ActiveRecord::Base
 
   def revenue_pending_orders
     revenue_total = 0.0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "pending"
         revenue_total += order.total_amount
       end
@@ -42,7 +42,7 @@ class Merchant < ActiveRecord::Base
 
   def revenue_cancelled_orders
     revenue_total = 0.0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "cancelled"
         revenue_total += order.total_amount
       end
@@ -52,7 +52,7 @@ class Merchant < ActiveRecord::Base
 
   def revenue_completed_orders
     revenue_total = 0.0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "completed"
         revenue_total += order.total_amount
       end
@@ -62,7 +62,7 @@ class Merchant < ActiveRecord::Base
 
   def total_revenue
     revenue_total = 0.0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "cancelled"
       else
         revenue_total += order.total_amount
@@ -73,7 +73,7 @@ class Merchant < ActiveRecord::Base
 
   def pending_orders
     pending = 0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "pending"
         pending += 1
       end
@@ -83,7 +83,7 @@ class Merchant < ActiveRecord::Base
 
   def cancelled_orders
     cancelled = 0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "cancelled"
         cancelled += 1
       end
@@ -93,7 +93,7 @@ class Merchant < ActiveRecord::Base
 
   def paid_orders
     paid = 0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "paid"
         paid += 1
       end
@@ -103,7 +103,7 @@ class Merchant < ActiveRecord::Base
 
   def completed_orders
     completed = 0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "completed"
         completed += 1
       end
@@ -113,7 +113,7 @@ class Merchant < ActiveRecord::Base
 
   def total_orders
     total = 0
-    orders.each do |order|
+    placed_orders.each do |order|
       if order.order_status == "cancelled"
       else
         total += 1
