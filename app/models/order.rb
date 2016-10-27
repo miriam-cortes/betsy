@@ -17,5 +17,13 @@ class Order < ActiveRecord::Base
     line_items << line
   end
 
-  
+  def total_amount
+    total = 0
+    self.line_items.each do |line|
+      line.subtotal
+      total += line.subtotal
+  end
+    return total
+  end
+
 end

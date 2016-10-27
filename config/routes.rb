@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :guests
     #resources :merchants
-    resources :orders
+    resources :orders do
+      post 'update_qty'
+    end
 
   get 'sessions/create'
 
