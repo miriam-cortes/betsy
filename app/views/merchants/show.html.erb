@@ -13,14 +13,14 @@
         <th>Order Status</th>
       </tr>
 
-      <% @merchant.orders.each do |order| %>
-        <tr>
-          <th><%= link_to(order.id, orders_path(order.id)) %></th>
-            <% order.products.each do |product| %>
-              <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
+      <% @merchant.placed_orders.each do |order| %>
+        <% order.products.each do |product| %>
+          <tr>
+            <th><%= link_to(order.id, orders_path(order.id)) %></th>
+            <th><%= link_to(product.name, merchant_product_path(@merchant.id, product.id)) %></th>
+            <th><%#= product.status %></th>
+          </tr>
             <% end %>
-          <th><%#= order.status %></th>
-        </tr>
       <% end %>
     </tbody>
   </table>
