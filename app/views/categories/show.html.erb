@@ -1,10 +1,12 @@
 <h2 class="page-header"> Product For <%= @category.name %></h2>
 
-<div class="row">
+<div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
 <% @products_in_category.each do |p| %>
   <article class="column small-6 medium-4 large-3">
-   <p class="product-name"><%= p.name %></p>
-   <p><%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %></p>
+    <div class="callout" data-equalizer-watch>
+      <p class="product-name"><%= p.name %></p>
+      <p><%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %></p>
+    </div>
  </article>
 <% end %>
 

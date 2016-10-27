@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action  do define_category_variables(2) end
+  before_action  do define_category_variables(8) end
   helper_method :current_merchant, :current_guest, :current_cart
 
   def current_merchant

@@ -1,4 +1,4 @@
-@import url('foundation.css')
+ @import url('foundation.css');
 // /*
 //  * This is a manifest file that'll be compiled into application.css, which will include all the files
 //  * listed below.
@@ -15,4 +15,108 @@
 //  *= require_self
 //= require foundation_and_overrides
 
- // *= require foundation_and_overrides
+// *= require foundation_and_overrides
+
+header {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+
+// nav {
+//   margin-top: 5%;
+//   text-align: center;
+// }
+//
+// nav ul.nav-list li {
+//   display: inline-block;
+//   margin: 1% 2%;
+//   font-size: 1.2rem;
+// }
+
+.top-bar {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background-color: white;
+}
+
+.categories-explaination {
+  padding: 0.7rem 1rem;
+  margin: 0;
+}
+
+
+.top-bar-left {
+  width: 80%;
+  margin-left: 9%;
+  background-color: white;
+}
+
+.top-bar-left .dropdown {
+  background-color: white;
+}
+
+@media only screen {
+  div.top-header {
+    text-align: center;
+  }
+
+  img.not-yetsy-main-logo {
+    // width: 60%;
+    // margin: 0 20%;
+    display: none;
+  }
+
+  nav {
+    margin-top: 0%;
+    text-align: center;
+  }
+
+  nav ul.nav-list li {
+    display: inline-block;
+    margin: 1% 2%;
+    font-size: 1rem;
+  }
+
+  h1.mobile-header {
+    display: block;
+    font-size: .7rem;
+    letter-spacing: 2px;
+  }
+
+  h1.mobile-header span {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2.1rem;
+  }
+
+  div.top-bar {
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 40.063em) {
+  img.not-yetsy-main-logo {
+    width: 25%;
+    display: inline-block;
+  }
+
+  nav {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  nav ul.nav-list li {
+    display: inline-block;
+    margin: 1% 2%;
+    font-size: 1.2rem;
+  }
+
+  h1.mobile-header {
+    display: none;
+  }
+
+  div.top-bar {
+    display: block;
+  }
+}
