@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'landing#index'
 
-  get 'landing/index'
+  get 'landing/index' => 'landing#index', as: 'index'
 
   get "/auth/:provider/callback" =>  "sessions#create"
 
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-root to: 'products#all_products'
 
   resources :merchants do
     resources :products do

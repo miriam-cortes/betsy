@@ -1,10 +1,11 @@
-<h2><%= @category.name %></h2>
+<h2 class="page-header"> Product For <%= @category.name %></h2>
 
-<h2><% @products_in_category.each do |p| %></h2>
-   <div>
-   <%= p.name %></br>
-   <%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %>
-   </div>
+<div class="row">
+<% @products_in_category.each do |p| %>
+  <article class="column small-6 medium-4 large-3">
+   <p class="product-name"><%= p.name %></p>
+   <p><%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %></p>
+ </article>
 <% end %>
 
 <%= link_to("View all Categories", categories_path) %>
