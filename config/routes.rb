@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     #resources :merchants
     resources :orders do
       post 'update_qty'
+      get 'checkout'
     end
 
   get 'sessions/create'
