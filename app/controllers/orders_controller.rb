@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     cart.card_cvv = params[:card_cvv]
     cart.billing_zip = params[:billing_zip]
     cart.shipping_zip = params[:shipping_zip]
-    cart.order_status == "Complete"
+    cart.order_status = "Complete"
     cart.save
     end
 
