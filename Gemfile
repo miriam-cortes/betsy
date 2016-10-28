@@ -8,8 +8,8 @@ gem "omniauth"
 gem "omniauth-github"
 
 gem 'simplecov', group: :test
-gem 'pg', group: :production
-gem 'rails_12factor', group: :production
+# gem 'pg', group: :production
+# gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
