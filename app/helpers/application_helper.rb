@@ -14,9 +14,9 @@ module ApplicationHelper
 
   def greeting
     if current_merchant.nil?
-      "Welcome Guest"
+      "Welcome, Guest"
     else
-      "Welcome #{current_merchant.name}"
+      "Welcome, #{current_merchant.name}"
     end
   end
 end
