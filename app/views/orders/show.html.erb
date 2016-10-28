@@ -1,9 +1,9 @@
-<h3><%= @order_items.count %> <%= @order_items.count == 1 ? "Item" : "Items" %> in Your Cart</h3>
+<h1 class="product-name"><%= @order_items.count %> <%= @order_items.count == 1 ? "Item" : "Items" %> in Your Cart</h1>
 
 <% if @order_items.count == 0 %>
-  <p class="text-center">
+  <h4 class="text-center order-number">
     There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
-  </p>
+  </h4>
 <% else %>
   <table class="table">
     <tr>
