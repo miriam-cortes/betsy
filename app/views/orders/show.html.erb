@@ -25,17 +25,17 @@
         <%= form_tag order_update_qty_path(current_cart.id), method: :patch do %>
         <td><%= number_field_tag :qty, item.qty.to_i, class: "form_control", min: 1 %></td>
           <%= hidden_field_tag :line_item_id, item.id %>
-          <td><%= submit_tag "Update Quantity", class: "btn btn-default" %></td>
+          <td><%= submit_tag "Update Quantity", class: "btn btn-default button" %></td>
 
           <td><%= number_to_currency(item.subtotal/100.0) %>
             <%end%>
-            <td><%= button_to 'Remove from Cart', {action: "destroy", id: item.id}, method: :delete, data: {confirm: "Are you sure?"} %></td>
+            <td><%= button_to 'Remove from Cart', {action: "destroy", id: item.id}, class: "button", method: :delete, data: {confirm: "Are you sure?"} %></td>
             </tr>
           <% end %>
           <tr>
             <td></td>
             <td></td>
-            <td><%= button_to "Checkout", order_checkout_path(current_cart.id), method: :get %></td>
+            <td><%= button_to "Checkout", order_checkout_path(current_cart.id), class: "button", method: :get %></td>
             <td></td>
             <td></td>
             <th>Order Total</th>
