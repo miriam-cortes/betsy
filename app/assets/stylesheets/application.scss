@@ -20,19 +20,13 @@
 header {
   width: 100%;
   border-bottom: 1px solid black;
+
 }
 
 
-// nav {
-//   margin-top: 5%;
-//   text-align: center;
-// }
-//
-// nav ul.nav-list li {
-//   display: inline-block;
-//   margin: 1% 2%;
-//   font-size: 1.2rem;
-// }
+.dropdown {
+  display: inline-block;
+}
 
 
  h1{font-size: 2em;}
@@ -76,7 +70,6 @@ body {margin: 1%;}
 
 
 
-
 .top-bar {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
@@ -98,6 +91,29 @@ body {margin: 1%;}
 .top-bar-left .dropdown {
   background-color: white;
 }
+
+.orbit-slide div h3 a {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+}
+
+.orbit-slide div h3 a:hover {
+  font-weight: 600;
+}
+
+.orbit-slide div {
+  text-align: center;
+}
+
+.orbit-slide div p.orbit-display {
+  display: inline-block;
+  margin: 1% 2%;
+  text-align: center;
+}
+
+
+
+// ###### Media Screen Differences ######
 
 @media only screen {
   div.top-header {
@@ -151,9 +167,10 @@ body {margin: 1%;}
 
   nav ul.nav-list li {
     display: inline-block;
-    margin: 1% 2%;
+    margin: 1% 1.2%;
     font-size: 1.2rem;
   }
+
 
   h1.mobile-header {
     display: none;

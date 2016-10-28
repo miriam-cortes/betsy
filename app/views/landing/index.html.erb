@@ -7,13 +7,11 @@
     <% @featured_products.each do |product| %>
       <li class="is-active orbit-slide">
         <div>
-          <h3 class="text-center"> <%= product.name %> </h3>
-          <p class="text-center"><%= image_tag(product.image, size: "200x275", alt: "Photo of #{product.name}") %></p>
-          <p class="text-center"> Price: $<%= '%.2f' % (product.price/100.00) %> </p>
-          <p class="text-center"> Inventory: <%= product.inventory %> </p>
+          <h3 class="text-center"> <%= link_to(product.name, merchant_product_path(product.merchant.id, product.id)) %> </h3>
+          <h5 class="text-center"><%= link_to(image_tag(product.image, size: "200x275", alt: "Photo of #{product.name}"), merchant_product_path(product.merchant.id, product.id)) %></h5>
+          <p class="text-center orbit-display"> Price: $<%= '%.2f' % (product.price/100.00) %> </p>
+          <p class="text-center orbit-display"> Inventory: <%= product.inventory %> </p>
           <p class="text-center"> <%= product.rating == nil ? "Not Yet Rated!" : star_string(product.rating) %> </p>
-
-
         </div>
       </li>
     <% end %>
