@@ -4,7 +4,7 @@
 <% @products_in_category.each do |p| %>
   <article class="column small-6 medium-4 large-3">
     <div class="callout" data-equalizer-watch>
-      <p class="product-name"><%= p.name %></p>
+      <p class="product-name"><%= link_to(p.name, merchant_product_path(p.merchant_id,p.id)) %></p>
       <p><%= link_to image_tag(p.image), merchant_product_path(p.merchant_id,p.id) %></p>
     </div>
  </article>
