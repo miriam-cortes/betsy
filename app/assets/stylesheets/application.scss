@@ -23,15 +23,18 @@ header {
 }
 
 main {
-  margin-bottom: 12vh;
+  padding-bottom: 12vh;
+}
+
+
 }
 
 div#checkout form {
   padding-bottom: 20vh;
 }
 .greeting-message {
-  margin: 2% 0 0 2%;
-  font-family: 'Kaushan Script', cursive;
+  margin: 2%;
+  font-family: 'Unica One', 'Kaushan Script', cursive;
   letter-spacing: 4px;
 }
 
@@ -118,7 +121,7 @@ body {margin: 1%;}
 }
 
 .orbit-slide div h3 a {
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Unica One', 'Kaushan Script', cursive;
   color: black;
 }
 
@@ -141,7 +144,7 @@ body {margin: 1%;}
 }
 
 .product-name a {
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Unica One', 'Kaushan Script', cursive;
   color: black;
   font-size: 1.8rem;
   letter-spacing: 2px;
@@ -219,6 +222,17 @@ p.product-description-paragraph {
 }
 
 
+div.product-name-div {
+  height: 15vh;
+}
+
+.product-photo {
+  max-height: 250px;
+}
+
+.product-grid {
+  margin-top: 3%;
+}
 
 // ###### Media Screen Differences ######
 
@@ -251,7 +265,7 @@ p.product-description-paragraph {
   }
 
   h1.mobile-header span {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Unica One', 'Kaushan Script', cursive;
     font-size: 2.1rem;
   }
 
