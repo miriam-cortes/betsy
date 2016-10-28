@@ -31,11 +31,12 @@ class OrdersController < ApplicationController
     cart.shipping_street = params[:shipping_street]
     cart.shipping_city = params[:shipping_city]
     cart.shipping_state = params[:shipping_state]
-    cart.card_number = params[:card_number]
+    cart.card_number = params[:card_number].chars.last(4).join
     cart.card_cvv = params[:card_cvv]
     cart.billing_zip = params[:billing_zip]
     cart.shipping_zip = params[:shipping_zip]
-    cart.order_status = "Complete"
+    cart.order_status = "Paid"
+    cart.total_amount = current_cart.total_amount
     cart.save
     end
 
@@ -73,10 +74,8 @@ class OrdersController < ApplicationController
 
 
     def checkout
-
-
     end
 
-
+    
 
 end#end of class
