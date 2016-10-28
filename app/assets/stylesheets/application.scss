@@ -23,14 +23,18 @@ header {
 }
 
 main {
-  margin-bottom: 5vh;
+  margin-bottom: 12vh;
 }
 
+div#checkout form {
+  padding-bottom: 20vh;
+}
 .greeting-message {
   margin: 2% 0 0 2%;
   font-family: 'Kaushan Script', cursive;
   letter-spacing: 4px;
 }
+
 
 footer {
   display: block;
