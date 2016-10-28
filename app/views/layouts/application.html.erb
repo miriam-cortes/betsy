@@ -16,7 +16,7 @@
     <!-- <img src="NotYetsyLogo.png" alt="Not Yetsy Logo" class="not-yetsy-main-logo"/> -->
     <div class="top-header row">
       <h1 class="mobile-header"><span>Not Yetsy</span> The Procrastinators Paradise</h1>
-      <%= image_tag("NotYetsyLogo.png", alt: "Not Yetsy Logo", class: "not-yetsy-main-logo columns small-12 medium-4 large-3") %>
+      <%= link_to(image_tag("NotYetsyLogo.png", alt: "Not Yetsy Logo", class: "not-yetsy-main-logo columns small-12 medium-4 large-3"), index_path, method: :get) %>
 
       <nav class="columns small-12 medium-8 large-9">
         <ul class="nav-list">
