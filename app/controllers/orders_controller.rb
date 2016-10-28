@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   def create
   end
 
-  
+
 
 
 
@@ -25,9 +25,23 @@ class OrdersController < ApplicationController
   end
 
   def update
-  end
+    cart = current_cart
+    cart.card_name = params[:card_name]
+    cart.card_exp = params[:card_exp]
+    cart.shipping_street = params[:shipping_street]
+    cart.shipping_city = params[:shipping_city]
+    cart.shipping_state = params[:shipping_state]
+    cart.card_number = params[:card_number]
+    cart.card_cvv = params[:card_cvv]
+    cart.billing_zip = params[:billing_zip]
+    cart.shipping_zip = params[:shipping_zip]
+    cart.order_status = "Complete"
+    cart.save
+    end
 
   def destroy
+    @order_items = LineItem.destroy(params[:id])
+    redirect_to action:"show"
   end
 
  def find_product
@@ -51,6 +65,17 @@ class OrdersController < ApplicationController
     #     @line.id.destroy(params[:id].to_i)
     # end
 
+    def update_qty
+      line_item = LineItem.find(params[:line_item_id])
+      line_item.update(qty: params[:qty])
+      redirect_to order_path(current_cart.id)
+    end
+
+
+    def checkout
+
+
+    end
 
 
 
