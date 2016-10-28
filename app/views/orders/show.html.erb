@@ -22,7 +22,7 @@
         <td><%= link_to "#{item.product.name}", merchant_product_path(merchant_id: item.product.merchant_id, id: item.product.id) %></td>
         <td><%= number_to_currency(item.product.price/100.0) %></td>
 
-        <%= form_tag order_update_qty_path(current_cart.id), method: :patch do %>
+        <%= form_tag order_update_qty_path(current_cart.id), method: :post do %>
         <td><%= number_field_tag :qty, item.qty.to_i, class: "form_control", min: 1 %></td>
           <%= hidden_field_tag :line_item_id, item.id %>
           <td><%= submit_tag "Update Quantity", class: "btn btn-default button" %></td>
