@@ -1,18 +1,32 @@
-<h1> All Reviews for <%= @product.name %></h1>
-<h4> Average: <%= star_string(@product.rating) %></h4>
+<h1 class="product-name"> All Reviews for <%= @product.name %></h1>
 
-<% @reviews.each do |review|  %>
-  <article>
-    <p><%=  star_string(review.stars) %></p>
-    <p><%= review.description %></p>
-    <p> <%= "By: #{review.author}" if review.author != '' %></p>
-    <p> <%= link_to "Delete Review", merchant_product_review_path(@merchant.id, @product.id, review.id), method: :delete, data: {confirm: "Are you sure?"}%></p>
-  </article>
-<% end %>
-<%# {controller: 'reviews', action: 'destroy', product_id: @product.id, id: review.id}, method: :delete, %>
-<% unless @product.merchant == current_merchant %>
-  <p>  <%= link_to 'Add A Review!', new_merchant_product_review_path(@merchant.id, @product.id) %> </p>
-<% end %>
-<p>
-  <%= link_to "Back to Product", merchant_product_path(@merchant.id, @product.id) %>
-</p>
+<div class='row product-reviews-heading'>
+  <% if @reviews != nil %>
+    <h4 class="reviews-header small-12 medium-7 columns"> Average: <%= star_string(@product.rating) %></h4>
+    <% unless @product.merchant == current_merchant %>
+      <p class="small-4 medium-3 columns">  <%= link_to 'Add A Review!', new_merchant_product_review_path(@merchant.id, @product.id) %> </p>
+    <% end %>
+    <p class="small-4 medium-2 columns end">  <%= link_to "Back to Product", merchant_product_path(@merchant.id, @product.id) %>  </p>
+  <% else %>
+    <p>  This Product has no reviews! </p>
+    <p>  <%= link_to "Back to Product", merchant_product_path(@merchant.id, @product.id) %></p>
+  <% end %>
+</div>
+
+
+
+<div class="row reviews-section">
+  <% if @reviews != nil %>
+    <% @reviews.each do |review| %>
+      <article class="one-review small-12">
+        <div class="row">
+          <div class="columns small-12 medium-2 stars-and-author">
+            <p><%= star_string(review.stars) %></p>
+            <p> <%= "By: #{review.author}" if review.author != ''  %></p>
+          </div>
+          <p class="columns small-12 medium-9"><%= review.description %></p>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+</div>

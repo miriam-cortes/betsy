@@ -22,17 +22,39 @@ header {
   border-bottom: 1px solid black;
 }
 
+main {
+  margin-bottom: 5vh;
+}
 
-// nav {
-//   margin-top: 5%;
-//   text-align: center;
-// }
-//
-// nav ul.nav-list li {
-//   display: inline-block;
-//   margin: 1% 2%;
-//   font-size: 1.2rem;
-// }
+.greeting-message {
+  margin: 2% 0 0 2%;
+  font-family: 'Kaushan Script', cursive;
+  letter-spacing: 4px;
+}
+
+footer {
+  display: block;
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 5vh;
+  background-color: white;
+  color: black;
+  vertical-align: middle;
+  font-weight: 200;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  clear: both;
+}
+
+footer p {
+  padding-top: 1%;
+}
+
+
+.dropdown {
+  display: inline-block;
+}
 
 
  h1{font-size: 2em;}
@@ -69,7 +91,6 @@ body {margin: 1%;}
 
 
 
-
 .top-bar {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
@@ -91,6 +112,111 @@ body {margin: 1%;}
 .top-bar-left .dropdown {
   background-color: white;
 }
+
+.orbit-slide div h3 a {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+}
+
+.orbit-slide div h3 a:hover {
+  font-weight: 600;
+}
+
+.orbit-slide div {
+  text-align: center;
+}
+
+.orbit-slide div p.orbit-display {
+  display: inline-block;
+  margin: 1% 2%;
+  text-align: center;
+}
+
+.product-name {
+  text-align: center;
+}
+
+.product-name a {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.product-name a:hover {
+  font-weight: 600;
+}
+
+h1.product-name {
+  text-align: center;
+  margin: auto;
+  font-family: 'Raleway', cursive;
+  text-transform: uppercase;
+  padding-bottom: 1%;
+  width: 50%;
+  border-bottom: 0.75px solid black;
+  color: black;
+  letter-spacing: 2px;
+}
+
+.product-info-main-container {
+  margin-top: 3%;
+}
+
+.product-image-main {
+  text-align: right;
+}
+.price-and-inventory-container, .product-merchant-buttons-container, .add-to-cart-section-container {
+  margin: 3% 0;
+}
+
+.price-and-inventory, .product-merchant-buttons, .add-to-cart-section {
+  display: inline-block;
+}
+
+.price-and-inventory:last-of-type, .product-merchant-buttons:last-of-type {
+  margin-left: 10%;
+}
+
+
+.add-to-cart-section.quantity-input {
+  width: 60%;
+}
+
+.add-to-cart-section-container form .add-to-cart {
+  display: inline-block;
+}
+
+.quantity-input-button .btn-primary {
+  padding: 7%;
+}
+
+span.identifier-field {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+p.product-description-paragraph {
+  line-height: 2;
+}
+
+.product-reviews-heading {
+  border-bottom: 0.75px solid black;
+  margin-top: 5%;
+}
+
+.one-review {
+  margin: 5% 0;
+  border-bottom: 0.25px solid lightgray;
+}
+
+.stars-and-author {
+  // border-bottom: 0.75px solid black;
+  margin-left: 3%;
+}
+
+
+
+// ###### Media Screen Differences ######
 
 @media only screen {
   div.top-header {
@@ -131,6 +257,7 @@ body {margin: 1%;}
 }
 
 
+
 @media only screen and (min-width: 40.063em) {
   img.not-yetsy-main-logo {
     width: 25%;
@@ -144,9 +271,10 @@ body {margin: 1%;}
 
   nav ul.nav-list li {
     display: inline-block;
-    margin: 1% 2%;
+    margin: 1% 1.2%;
     font-size: 1.2rem;
   }
+
 
   h1.mobile-header {
     display: none;

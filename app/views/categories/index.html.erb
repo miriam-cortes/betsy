@@ -6,7 +6,7 @@
   <% @category.each do |category| %>
     <article class="column small-6 medium-4 large-3 <%= "end" if category == @category.last%>">
       <div class="callout" data-equalizer-watch>
-        <p><%= link_to(category.name, category_path(category.id)) %></p>
+        <p class="product-name"><%= link_to(category.name, category_path(category.id)) %></p>
         <p>  <%= image_tag((category.products.first == nil ? "NoProductImage.png" : "#{category.products.first.image}"), size: "200x300", alt: "Link of #{category.name}.") %>  </p>
       </div>
     </article>
