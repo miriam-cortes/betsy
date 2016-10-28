@@ -53,7 +53,7 @@ class Merchant < ActiveRecord::Base
   def revenue_completed_orders
     revenue_total = 0.0
     placed_orders.each do |order|
-      if order.order_status == "completed"
+      if order.order_status == "Complete"
         revenue_total += order.total_amount
       end
     end
@@ -104,7 +104,7 @@ class Merchant < ActiveRecord::Base
   def completed_orders
     completed = 0
     placed_orders.each do |order|
-      if order.order_status == "completed"
+      if order.order_status == "Complete"
         completed += 1
       end
     end

@@ -62,9 +62,9 @@
     <div class="top-bar-left">
       <ul class="dropdown menu large-screen" data-dropdown-menu>
         <li><h5 class="categories-explaination">Categories: </h5></li>
-        <% @top_catgories.each do |category| %>
-        <li><%= link_to(category.name, category_path(category.id)) %></li>
-        <% end %>
+        <%# @top_catgories.each do |category| %>
+        <li><%#= link_to(category.name, category_path(category.id)) %></li>
+        <%# end %>
         <li>
           <a>More Categories</a>
           <ul class="menu">

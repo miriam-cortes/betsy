@@ -1,5 +1,5 @@
 
-<section>
+<section class="small-12 column">
   <!-- #show columns to enter shipping info
    #street address, city, state, zip
   #show columns to enter billing info
@@ -7,7 +7,7 @@
    #set order status to complete -->
    <div class="grid-block">
    <div class="small-12 medium-6 grid-content">
-<p>Total: <%= number_to_currency(current_cart.total_amount) %></p>
+<p>Total: <%= number_to_currency(current_cart.total_amount/100.0) %></p>
 <h3>Shipping Information</h3>
 <%= form_tag order_path(current_cart.id), method: :patch do %>
 <p>Name</p>
